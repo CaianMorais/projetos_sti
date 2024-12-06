@@ -11,6 +11,9 @@
     <!-- Favicon -->
     <link href="img/favicon.ico" rel="icon">
 
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,7 +21,7 @@
         rel="stylesheet">
 
     <!-- Icon Font Stylesheet -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
     <!-- Libraries Stylesheet -->
@@ -38,13 +41,13 @@
     <div id="spinner"
         class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
         <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem;" role="status">
-            <span class="sr-only">Loading...</span>
+            <span class="sr-only">Carregando...</span>
         </div>
     </div>
     <!-- Spinner End -->
 
     <!-- Navbar Start -->
-    <div class="container-fluid sticky-top bg-dark">
+    <div class="container-fluid sticky-top">
         <div class="container">
             <nav class="navbar navbar-expand-lg navbar-dark p-0">
                 <a href="index.html" class="navbar-brand">
@@ -56,21 +59,23 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <div class="navbar-nav ms-auto">
-                        <a href="index.html" class="nav-item nav-link active">Início</a>
-                        <a href="about.html" class="nav-item nav-link">Equipe</a>
+                        <a href="index.html" class="nav-item nav-link">Início</a>
                         <a href="service.html" class="nav-item nav-link">Projetos</a>
-                        <a href="project.html" class="nav-item nav-link">Certificação</a>
                         <div class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
+                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Páginas</a>
                             <div class="dropdown-menu bg-light mt-2">
-                                <a href="feature.html" class="dropdown-item">Features</a>
-                                <a href="team.html" class="dropdown-item">Our Team</a>
-                                <a href="faq.html" class="dropdown-item">FAQs</a>
-                                <a href="testimonial.html" class="dropdown-item">Testimonial</a>
-                                <a href="404.html" class="dropdown-item">404 Page</a>
+                                <a href="feature.html" class="dropdown-item">Nossa equipe</a>
+                                <a href="team.html" class="dropdown-item">Certificação CAPDA</a>
                             </div>
                         </div>
                         <a href="contact.html" class="nav-item nav-link">Contato</a>
+                        @if (auth()->check())
+                            <a  href="{{ route('logout') }}"  class="nav-item nav-link"
+                                onclick="event.preventDefault(); document.getElementById('logout-form').submit();"{{ __('Logout') }}>Logout</a>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                @csrf
+                            </form>
+                        @endif
                     </div>
                     {{--
                     <butaton type="button" class="btn text-white p-0 d-none d-lg-block" data-bs-toggle="modal"
@@ -92,9 +97,7 @@
                     <a href="index.html" class="d-inline-block mb-3">
                         <h1 class="text-white">Projetos STI</h1>
                     </a>
-                    <p class="mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum et tempor sit. Aliqu diam
-                        amet diam et eos labore. Clita erat ipsum et lorem et sit, sed stet no labore lorem sit. Sanctus
-                        clita duo justo et tempor</p>
+                    <p class="mb-0">Site desenvolvido pelo setor de Coordenação de Tecnologia de Informação do Sistema da Federação das Indústrias do Estado de Rondônia juntamente com o setor de Soluções em Tecnologias e Inovação.</p>
                 </div>
                 <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.3s">
                     <h5 class="text-white mb-4">Entre em contato</h5>
@@ -112,10 +115,10 @@
                     --}}
                 </div>
                 <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.5s">
-                    <h5 class="text-white mb-4">Links populares</h5>
+                    <h5 class="text-white mb-4">Links</h5>
                     <a class="btn btn-link" href="">Equipe</a>
-                    <a class="btn btn-link" href="">Certificação</a>
                     <a class="btn btn-link" href="">Projetos</a>
+                    <a class="btn btn-link" href="">Certificação</a>
                     <a class="btn btn-link" href="">Contato</a>
                 </div>
                 {{--
