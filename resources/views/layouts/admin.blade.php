@@ -34,10 +34,10 @@
                 </div>
                 <div class="sidebar-menu">
                     <ul class="menu">
-                        <li class="sidebar-title">Gerenciar conteúdo</li>
+                        <li class="sidebar-title">- Gerenciar conteúdo</li>
 
                         <li class="sidebar-item ">
-                            <a href="index.html" class='sidebar-link'>
+                            <a href="{{ route('admin.projetos') }}" class='sidebar-link'>
                                 <i class="bi bi-grid-fill"></i>
                                 <span>Projetos</span>
                             </a>
@@ -50,7 +50,7 @@
                             </a>
                         </li>
 
-                        <li class="sidebar-title">Gerenciar perfis</li>
+                        <li class="sidebar-title">- Gerenciar perfis</li>
 
                         <li class="sidebar-item  has-sub">
                             <a href="#" class='sidebar-link'>
@@ -77,6 +77,24 @@
                     </ul>
                 </div>
                 <button class="sidebar-toggler btn x"><i data-feather="x"></i></button>
+            </div>
+        </div>
+        <div id="main">
+            <header class="mb-3">
+                <a href="#" class="burger-btn d-block d-xl-none">
+                    <i class="bi bi-justify fs-3"></i>
+                </a>
+            </header>
+
+            <div class="page-heading">
+                <h3>{{ $title ?? 'Aa'}}</h3>
+            </div>
+            <div class="page-content">
+                <section class="row">
+
+                    @yield('content')
+
+                </section>
             </div>
         </div>
     </div>

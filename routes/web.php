@@ -15,12 +15,6 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-
-Auth::routes();
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
@@ -36,6 +30,10 @@ Route::post('password/email', [App\Http\Controllers\Auth\ForgotPasswordControlle
 Route::get('password/reset/{token}', [App\Http\Controllers\Auth\ResetPasswordController::class, 'showResetForm'])->name('password.reset');
 Route::post('password/reset', [App\Http\Controllers\Auth\ResetPasswordController::class, 'reset'])->name('password.update');
 
-Route::prefix('admin')->group(function () {
-    Route::get('menu', [AdminController::class,'menu'])->name('admin.menu');
+Route::group(['middleware' => ['check.role:2,3']], function() {
+    Route::prefix('admin')->group(function () {
+        Route::get('menu', [AdminController::class,'menu'])->name('admin.menu');
+        Route::get('/projetos', [AdminController::class,'projetos'])->name('admin.projetos');
+        Route::get('projetos/criar', [AdminController::class,'criar'])->name('admin.criar');
+    });
 });
