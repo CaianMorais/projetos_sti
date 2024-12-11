@@ -35,5 +35,9 @@ Route::group(['middleware' => ['check.role:2,3']], function() {
         Route::get('menu', [AdminController::class,'menu'])->name('admin.menu');
         Route::get('/projetos', [AdminController::class,'projetos'])->name('admin.projetos');
         Route::get('projetos/criar', [AdminController::class,'criar'])->name('admin.criar');
+        Route::post('projetos/store', [AdminController::class,'store'])->name('admin.projetos.store');
+        Route::get('projetos/editar/{projeto}', [AdminController::class,'editar_projeto'])->name('admin.projetos.editar');
+        Route::put('projetos/editar/{id}', [AdminController::class, 'update_projeto'])->name('admin.projeto.update');
+        Route::delete('delete/fotos/{foto}', [AdminController::class, 'destroy_foto'])->name('admin.projetos.fotos.destroy');
     });
 });

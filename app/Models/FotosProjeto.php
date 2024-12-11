@@ -9,6 +9,8 @@ class FotosProjeto extends Model
 {
     use HasFactory;
 
+    protected $table = 'fotos_projeto';
+
     protected $fillable = ['path', 'projeto_id'];
 
     public function projeto()

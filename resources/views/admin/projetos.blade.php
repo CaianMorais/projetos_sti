@@ -41,7 +41,7 @@
                                     <td>{{ $projeto->created_at }}</td>
 
                                     <td class="d-flex justify-content-around align-items-center">
-                                        <a href="#" title="Editar">
+                                        <a href="{{ route('admin.projetos.editar', $projeto->id) }}" title="Editar">
                                             <i class="bi bi-pencil-fill"></i>
                                         </a>
                                         <a href="#" title="Excluir">

@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="{{ asset('vendors/bootstrap-icons/bootstrap-icons.css') }}">
     <link rel="stylesheet" href="{{ asset('css/admin/app.css') }}">
     <link rel="shortcut icon" href="assets/images/favicon.svg" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.snow.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -80,6 +81,19 @@
             </div>
         </div>
         <div id="main">
+            @if (session('toast_success'))
+                <div class="col-md-12">
+                    <div class="alert alert-success alert-dismissible show fade text-white">
+                        {{ session('toast_success') }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                </div>
+                @elseif (session('toast_error'))
+                <div class="alert alert-danger alert-dismissible show fade text-white">
+                    {{ session('toast_error') }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            @endif
             <header class="mb-3">
                 <a href="#" class="burger-btn d-block d-xl-none">
                     <i class="bi bi-justify fs-3"></i>
