@@ -20,7 +20,7 @@ class CheckUserRole
 
         if (!$user || !in_array($user->perfil_id, $roles))
         {
-            return redirect()->back()->with('toast_error', 'Você não tem permissão para acessar esse módulo.');
+            return redirect()->route('home')->with('toast_error', 'Você não tem permissão para acessar esse módulo.');
         }
         return $next($request);
     }

@@ -39,5 +39,6 @@ Route::group(['middleware' => ['check.role:2,3']], function() {
         Route::get('projetos/editar/{projeto}', [AdminController::class,'editar_projeto'])->name('admin.projetos.editar');
         Route::put('projetos/editar/{id}', [AdminController::class, 'update_projeto'])->name('admin.projeto.update');
         Route::delete('delete/fotos/{foto}', [AdminController::class, 'destroy_foto'])->name('admin.projetos.fotos.destroy');
+        Route::get('projetos/delete/{projeto}', [AdminController::class,'destroy_projeto'])->name('admin.projetos.delete');
     });
 });

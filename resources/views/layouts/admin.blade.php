@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="{{ asset('css/admin/app.css') }}">
     <link rel="shortcut icon" href="assets/images/favicon.svg" type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.snow.css" rel="stylesheet" />
+    <link rel="stylesheet" href="{{ asset('vendors/sweetalert2/sweetalert2.min.css') }}"/>
 </head>
 
 <body>
@@ -101,7 +102,10 @@
             </header>
 
             <div class="page-heading">
-                <h3>{{ $title ?? 'Aa'}}</h3>
+                <h3>
+                    <a href="{{ route($urlBack ?? 'admin.menu') }}"><i class="bi bi-chevron-left"></i></a>
+                     {{ $title ?? ''}}
+                </h3>
             </div>
             <div class="page-content">
                 <section class="row">
@@ -114,10 +118,8 @@
     </div>
     <script src="{{ asset('vendors/perfect-scrollbar/perfect-scrollbar.min.js') }}"></script>
     <script src="{{ asset('js/admin/bootstrap.bundle.min.js') }}"></script>
-
-    <script src="{{ asset('vendors/apexcharts/apexcharts.js') }}"></script>
     <script src="{{ asset('js/admin/pages/dashboard.js') }}"></script>
-
+    <script src="{{ asset('vendors/sweetalert2/sweetalert2.all.min.js') }}"></script>
     <script src="{{ asset('js/admin/main.js') }}"></script>
 </body>
 

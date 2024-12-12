@@ -6,11 +6,8 @@
     <div class="card">
         <div class="card-content">
             <div class="card-body">
-                {{-- PARTIAL DE FORMULARIO DE EDITAR PROJETO --}}
-                @include('admin.partials.projetos._edit_projeto')
-
-                {{-- PARTIAL DE TABELA DE FOTOS DO PROJETO --}}
-                @include('admin.partials.projetos._fotos_projeto')
+                {{-- PARTIAL DO FORMULARIO DE CRIAR PROJETO --}}
+                @include('admin.partials.projetos._create_projeto')
             </div>
         </div>
     </div>
@@ -22,7 +19,6 @@
 
 <script>
     document.addEventListener("DOMContentLoaded", function () {
-
         const quill = new Quill('#editor', {
             theme: 'snow',
             placeholder: 'Digite mais detalhes sobre o projeto'
@@ -37,7 +33,7 @@
         const minValueInput = document.getElementById('min_value');
         const maxValueInput = document.getElementById('max_value');
 
-        // mascara de moeda
+        // máscara de moeda
         Inputmask({
             alias: "currency",
             prefix: "R$ ",
@@ -49,7 +45,7 @@
             rightAlign: false
         }).mask([minValueInput, maxValueInput]);
     });
+    
 </script>
-
 
 @endsection
