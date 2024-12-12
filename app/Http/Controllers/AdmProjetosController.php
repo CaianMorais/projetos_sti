@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Storage;
 
-class AdminController extends Controller
+class AdmProjetosController extends Controller
 {
     public function menu(){
         return view("admin.menu")->with('title', 'Selecione um menu para visualizar');
