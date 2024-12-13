@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdmEquipeController;
 use App\Http\Controllers\AdmProjetosController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
@@ -44,5 +45,11 @@ Route::group(['middleware' => ['check.role:2,3']], function() {
         Route::get('projetos/delete/{projeto}', [AdmProjetosController::class,'destroy_projeto'])->name('admin.projetos.delete');
 
         // EQUIPE
+        Route::get('equipe', [AdmEquipeController::class,'equipe'])->name('admin.equipe');
+        Route::get('equipe/criar', [AdmEquipeController::class,'criar'])->name('admin.equipe.criar');
+        Route::post('equipe/store', [AdmEquipeController::class,'store'])->name('admin.equipe.store');
+        Route::get('equipe/editar/{id}', [AdmEquipeController::class,'editar'])->name('admin.equipe.editar');
+        Route::put('equipe/update/{id}', [AdmEquipeController::class,'update'])->name('admin.equipe.update');
+        Route::get('equipe/delete/{id}', [AdmEquipeController::class,'destroy'])->name('admin.equipe.destroy');
     });
 });

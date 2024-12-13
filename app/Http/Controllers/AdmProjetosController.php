@@ -11,17 +11,19 @@ use Illuminate\Support\Facades\Storage;
 class AdmProjetosController extends Controller
 {
     public function menu(){
-        return view("admin.menu")->with('title', 'Selecione um menu para visualizar');
+        return view("admin.menu")->with('title', 'Início');
     }
 
     // LISTA DE PROJETOS
     public function projetos(){
         $projetos = Projetos::orderBy('id','desc')
         ->paginate(20);
+        $contagemProjetos = Projetos::count();
 
         return view('admin.projetos')
         ->with('title','Tabela de projetos')
         ->with('projetos', $projetos)
+        ->with('contagem', $contagemProjetos)
         ->with('urlBack', 'admin.menu');
     }
 

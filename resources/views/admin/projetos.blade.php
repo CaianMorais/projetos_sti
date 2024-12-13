@@ -15,13 +15,14 @@
 
                     </div>
                 </div>
+                @if ($contagem > 20)
                 <div class="card-footer d-flex justify-content-center">
                     <ul class="pagination pagination-primary">
-                        {{-- PARTIAL DO PAGINATE --}}
+                        {{-- PARTIAL DO PAGINATE (SE HOUVER MAIS DE 20 PROJETOS)--}}
                         @include('admin.partials.projetos._paginate_table')
-
                     </ul>
                 </div>
+                @endif
             </div>
         </div>
     </div>

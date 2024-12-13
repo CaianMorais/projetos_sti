@@ -46,6 +46,31 @@
         }).mask([minValueInput, maxValueInput]);
     });
     
+    
+    const fotoUpload = document.getElementById('formFileMultiple');
+    const submitBtn = document.getElementById('publicar');
+
+    fotoUpload.onchange = function () {
+        let arquivoGrande = false;
+
+        for (let i = 0; i < this.files.length; i++) {
+            if (this.files[i].size > 8388607) {
+                arquivoGrande = true;
+                break;
+            }
+        }
+
+        if (arquivoGrande) {
+            Swal.fire({
+                title: 'Alerta',
+                text: "Uma foto está ultrapassando o limite de 8MB",
+                icon: 'error',
+            });
+            submitBtn.disabled = true;
+        } else {
+            submitBtn.disabled = false;
+        }
+    };
 </script>
 
 @endsection
