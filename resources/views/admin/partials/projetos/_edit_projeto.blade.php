@@ -59,7 +59,7 @@
             <small class="text-danger">Serão apenas aceitos imagens em .png, .jpg ou .jpeg</small>
         </div>
         <div class="col-12 d-flex justify-content-end">
-            <button type="submit" class="btn btn-primary me-1 mb-1">Atualizar</button>
+            <button type="submit" id="publicar" class="btn btn-primary me-1 mb-1">Atualizar</button>
             <button type="reset" class="btn btn-light-secondary me-1 mb-1">Limpar formulário</button>
         </div>
     </div>

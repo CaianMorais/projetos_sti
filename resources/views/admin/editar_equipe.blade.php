@@ -27,5 +27,23 @@
         removeMaskOnSubmit: false,
         rightAlign: false
     }).mask([telefoneInput]);
+
+    const fotoUpload = document.getElementById('formFile');
+    const submitBtn = document.getElementById('cadastrar');
+
+    fotoUpload.onchange =function(){
+        if (this.files[0].size > 8388607){
+            Swal.fire({
+                title: 'Alerta',
+                text: "A foto não pode ultrapassar o limite de 8MB",
+                icon: 'error',
+            });
+            submitBtn.disabled = true;
+        }
+        else
+        {
+            submitBtn.disabled = false;
+        }
+    }
 </script>
 @endsection

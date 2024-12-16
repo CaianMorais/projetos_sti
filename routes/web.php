@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdmEquipeController;
 use App\Http\Controllers\AdmProjetosController;
+use App\Http\Controllers\AdmUsuariosController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -51,5 +52,13 @@ Route::group(['middleware' => ['check.role:2,3']], function() {
         Route::get('equipe/editar/{id}', [AdmEquipeController::class,'editar'])->name('admin.equipe.editar');
         Route::put('equipe/update/{id}', [AdmEquipeController::class,'update'])->name('admin.equipe.update');
         Route::get('equipe/delete/{id}', [AdmEquipeController::class,'destroy'])->name('admin.equipe.destroy');
+
+        //USUARIOS
+        Route::get('usuarios', [AdmUsuariosController::class,'usuarios'])->name('admin.usuarios');
+        Route::post('usuarios/{id}/send-reset-link', [AdmUsuariosController::class,'sendResetLink'])->name('admin.usuarios.sendResetLink');
+        Route::get('usuarios/criar', [AdmUsuariosController::class, 'criar'])->name('admin.usuarios.criar');
+        Route::post('usuarios/store', [AdmUsuariosController::class, 'store'])->name('admin.usuarios.store');
+        Route::get('usuarios/editar/{id}', [AdmUsuariosController::class,'editar'])->name('admin.usuarios.editar');
+        Route::post('usuarios/update/{id}', [AdmUsuariosController::class,'update'])->name('admin.usuarios.update');
     });
 });

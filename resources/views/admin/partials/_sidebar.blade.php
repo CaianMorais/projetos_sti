@@ -28,21 +28,13 @@
                     </a>
                 </li>
 
-                <li class="sidebar-title">- Gerenciar perfis</li>
+                <li class="sidebar-title">- Gerenciar contas</li>
 
-                <li class="sidebar-item  has-sub">
-                    <a href="#" class='sidebar-link'>
-                    <i class="bi bi-people-fill"></i>
+                <li class="sidebar-item  ">
+                    <a href="{{ route('admin.usuarios') }}" class='sidebar-link'>
+                    <i class="bi bi-person-fill"></i>
                         <span>Usuários</span>
                     </a>
-                    <ul class="submenu ">
-                        <li class="submenu-item ">
-                            <a href="form-element-input.html">Redefinir senha</a>
-                        </li>
-                        <li class="submenu-item ">
-                            <a href="form-element-input-group.html">Atribuir perfil</a>
-                        </li>
-                    </ul>
                 </li>
 
                 <li class="sidebar-item  ">
