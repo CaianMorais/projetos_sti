@@ -6,12 +6,12 @@
     <div class="row">
         <div class="card">
             <div class="card-header">
-                <h5 class="card-title text-center">Boas-vindas ao manual de adminitrador do Projetos STI</h5>
+                <h5 class="card-title text-center">Manual de administrador do Projetos STI</h5>
             </div>
             <div class="card-body">
                 <ul class="nav nav-tabs" id="myTab" role="tablist">
                     <li class="nav-item" role="presentation">
-                        <a class="nav-link active" id="home-tab" data-bs-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Informações</a>
+                        <a class="nav-link active" id="home-tab" data-bs-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Introdução</a>
                     </li>
                     <li class="nav-item" role="presentation">
                         <a class="nav-link" id="projetos-tab" data-bs-toggle="tab" href="#projeto" role="tab" aria-controls="profile" aria-selected="false">Projetos</a>

@@ -28,7 +28,25 @@
                     </a>
                 </li>
 
-                <li class="sidebar-title">- Gerenciar contas</li>
+                <li class="sidebar-title">- Gerenciar contatos</li>
+
+                <li class="sidebar-item ">
+                    <a href="#" class='sidebar-link'>
+                    <i class="bi bi-telephone"></i>
+                        <span>Solicitações de contato</span>
+                    </a>
+                </li>
+
+                <li class="sidebar-item ">
+                    <a href="#" class='sidebar-link'>
+                    <i class="bi bi-telephone"></i>
+                        <span>Contato via projeto</span>
+                    </a>
+                </li>
+
+                @if(auth()->user()->perfil_id == 3)
+
+                <li class="sidebar-title">- Gerenciar dados</li>
 
                 <li class="sidebar-item  ">
                     <a href="{{ route('admin.usuarios') }}" class='sidebar-link'>
@@ -41,6 +59,22 @@
                     <a href="{{ route('admin.perfis') }}" class='sidebar-link'>
                     <i class="bi bi-person-bounding-box"></i>
                         <span>Perfis</span>
+                    </a>
+                </li>
+
+                <li class="sidebar-item ">
+                    <a href="#" class='sidebar-link'>
+                    <i class="bi bi-cloud-fill"></i>
+                        <span>Contatos armazenados</span>
+                    </a>
+                </li>
+
+                @endif
+
+                <li class="sidebar-item ">
+                    <a href="{{ route('home') }}" class='sidebar-link text-danger'>
+                    <i class="bi bi-door-open-fill text-danger"></i>
+                        <span>Sair do Admin STI</span>
                     </a>
                 </li>
 

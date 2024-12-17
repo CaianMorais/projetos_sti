@@ -15,4 +15,9 @@ class Projetos extends Model
     {
         return $this->hasMany(FotosProjeto::class, 'projeto_id');
     }
+
+    public function contatos()
+    {
+        return $this->hasMany(ContatoProjeto::class,'projeto_id');
+    }
 }

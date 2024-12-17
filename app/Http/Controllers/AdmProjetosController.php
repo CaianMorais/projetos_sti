@@ -11,7 +11,9 @@ use Illuminate\Support\Facades\Storage;
 class AdmProjetosController extends Controller
 {
     public function menu(){
-        return view("admin.menu")->with('title', 'Início');
+        return view("admin.menu")
+            ->with('title', 'Início')
+            ->with('urlBack', 'home');
     }
 
     // LISTA DE PROJETOS
