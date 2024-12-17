@@ -38,7 +38,7 @@
                 </li>
 
                 <li class="sidebar-item  ">
-                    <a href="form-layout.html" class='sidebar-link'>
+                    <a href="{{ route('admin.perfis') }}" class='sidebar-link'>
                     <i class="bi bi-person-bounding-box"></i>
                         <span>Perfis</span>
                     </a>
