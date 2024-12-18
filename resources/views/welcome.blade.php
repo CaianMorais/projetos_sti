@@ -96,7 +96,8 @@
                 <div class="col-md-7 py-5 newsletter-text wow fadeIn" data-wow-delay="0.5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeIn;">
                     <div class="btn btn-sm border rounded-pill text-white px-3 mb-3">Contato</div>
                     <h1 class="text-white mb-4">Gostou das vantagens e quer investir?</h1>
-                    <p class="text-white">Use o botão abaixo e envie algumas informações para nossa equipe entrar em contato com você.</p>
+                    <p class="text-white">Escolha um projeto ou entre em contato conosco para que nossa equipe contate você para saber mais.</p>
+                    <a class="btn btn-outline-light rounded-pill px-4" href="#">Veja os projetos</a>
                     <a class="btn btn-light rounded-pill px-4" href="#">Entre com contato conosco</a>
                 </div>
             </div>
