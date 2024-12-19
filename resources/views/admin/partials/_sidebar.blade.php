@@ -31,7 +31,7 @@
                 <li class="sidebar-title">- Gerenciar contatos</li>
 
                 <li class="sidebar-item ">
-                    <a href="#" class='sidebar-link'>
+                    <a href="{{ route('admin.solicitacoes_contato') }}" class='sidebar-link'>
                     <i class="bi bi-telephone"></i>
                         <span>Solicitações de contato</span>
                     </a>

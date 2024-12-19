@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdmEquipeController;
 use App\Http\Controllers\AdmPerfisController;
 use App\Http\Controllers\AdmProjetosController;
+use App\Http\Controllers\AdmSolicitacaoContatosController;
 use App\Http\Controllers\AdmUsuariosController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
@@ -53,6 +54,9 @@ Route::group(['middleware' => ['check.role:2,3']], function() {
         Route::get('equipe/editar/{id}', [AdmEquipeController::class,'editar'])->name('admin.equipe.editar');
         Route::put('equipe/update/{id}', [AdmEquipeController::class,'update'])->name('admin.equipe.update');
         Route::get('equipe/delete/{id}', [AdmEquipeController::class,'destroy'])->name('admin.equipe.destroy');
+
+        Route::get('solicitacoes_contato', [AdmSolicitacaoContatosController::class,'solicitacoes'])->name('admin.solicitacoes_contato');
+        Route::get('solicitacoes_contato/ver/{id}', [AdmSolicitacaoContatosController::class, 'ver'])->name('admin.ver_solicitacao_contato');
     });
 });
 

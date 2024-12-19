@@ -16,7 +16,7 @@ class CreateSolicitacaoContatosTable extends Migration
         Schema::create('solicitacao_contatos', function (Blueprint $table) {
             $table->id();
             $table->string('nome', 100);
-            $table->string('telefone');
+            $table->string('telefone')->nullable();
             $table->string('email');
             $table->string('assunto', 100);
             $table->text('mensagem');

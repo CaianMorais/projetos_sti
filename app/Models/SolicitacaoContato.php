@@ -16,5 +16,6 @@ class SolicitacaoContato extends Model
         'email',
         'assunto',
         'mensagem',
+        'lido',
     ];
 }
