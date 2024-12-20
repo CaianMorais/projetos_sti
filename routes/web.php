@@ -21,6 +21,8 @@ use Illuminate\Support\Facades\Auth;
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/contato', [App\Http\Controllers\ContatoController::class, 'contato'])->name('contato');
+Route::post('/contato/enviar', [App\Http\Controllers\ContatoController::class, 'enviar_contato'])->name('contato.enviar');
 
 Route::get('login', [App\Http\Controllers\Auth\LoginController::class, 'showLoginForm'])->name('login');
 Route::post('login', [App\Http\Controllers\Auth\LoginController::class, 'login']);

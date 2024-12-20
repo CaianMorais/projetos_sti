@@ -104,7 +104,7 @@
                                 <a href="team.html" class="dropdown-item">Certificação CAPDA</a>
                             </div>
                         </div>
-                        <a href="contact.html" class="nav-item nav-link">Contato</a>
+                        <a href="{{ route('contato') }}" class="nav-item nav-link">Contato</a>
                         @if (auth()->check())
                             <div class="nav-item dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">{{ auth()->user()->name }}</a>
