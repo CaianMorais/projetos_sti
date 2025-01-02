@@ -20,7 +20,7 @@ class CreateProjetosTable extends Migration
             $table->decimal('valor_maximo', 15, 2);
             $table->string('autor_projeto');
             $table->string('descricao');
-            $table->string('detalhes');
+            $table->longText('detalhes');
             $table->string('status');
             $table->timestamps();
         });

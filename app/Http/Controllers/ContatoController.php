@@ -10,7 +10,7 @@ class ContatoController extends Controller
 {
     public function contato()
     {
-        return view('main.contato');
+        return view('main.contato.contato');
     }
     public function store(Request $request)
     {

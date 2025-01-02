@@ -95,8 +95,8 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <div class="navbar-nav ms-auto">
-                        <a href="index.html" class="nav-item nav-link">Início</a>
-                        <a href="service.html" class="nav-item nav-link">Projetos</a>
+                        <a href="{{ route('home') }}" class="nav-item nav-link">Início</a>
+                        <a href="{{ route('projetos') }}" class="nav-item nav-link">Projetos</a>
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Páginas</a>
                             <div class="dropdown-menu bg-light mt-2">

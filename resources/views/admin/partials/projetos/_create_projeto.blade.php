@@ -56,7 +56,10 @@
         <div class="mb-3">
             <label for="formFileMultiple" class="form-label">Fotos do projeto</label>
             <input class="form-control" type="file" id="formFileMultiple" name="img_projetos[]" multiple accept=".jpg, .jpeg, .png" required>
-            <small class="text-danger">Serão apenas aceitos imagens em .png, .jpg ou .jpeg</small>
+            <small class="text-danger">Serão apenas aceitos imagens em .png, .jpg ou .jpeg</small><br>
+            <small class="text-danger">A primeira imagem será a capa na tela do projeto em <a href={{ route('projetos') }}>Projetos</a> e deve ser de resolução 400x500 ou aproximado</small><br>
+            <small class="text-danger">As demais imagens serão exibidas na tela do projeto e devem ser de resolução 850x500 ou aproximado</small><br>
+            <small class="text-danger">As imagens postadas que não seguirem as recomendações acima, poderão estar comprometendo a responsividade e a visualização do usuário final.</small>
         </div>
         <div class="col-12 d-flex justify-content-end">
             <button type="submit" id="publicar" class="btn btn-primary me-1 mb-1">Publicar</button>
