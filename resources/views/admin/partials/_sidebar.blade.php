@@ -38,7 +38,7 @@
                 </li>
 
                 <li class="sidebar-item ">
-                    <a href="#" class='sidebar-link'>
+                    <a href="{{ route('admin.escolha') }}" class='sidebar-link'>
                     <i class="bi bi-telephone"></i>
                         <span>Contato via projeto</span>
                     </a>

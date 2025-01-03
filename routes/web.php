@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdmContatoProjetoController;
 use App\Http\Controllers\AdmEquipeController;
 use App\Http\Controllers\AdmPerfisController;
 use App\Http\Controllers\AdmProjetosController;
@@ -63,6 +64,9 @@ Route::group(['middleware' => ['check.role:2,3']], function() {
 
         Route::get('solicitacoes_contato', [AdmSolicitacaoContatosController::class,'solicitacoes'])->name('admin.solicitacoes_contato');
         Route::get('solicitacoes_contato/ver/{id}', [AdmSolicitacaoContatosController::class, 'ver'])->name('admin.ver_solicitacao_contato');
+
+        Route::get('escolher', [AdmContatoProjetoController::class,'contatos_ou_projetos'])->name('admin.escolha');
+        Route::get('contatos_por_projeto', [AdmContatoProjetoController::class,'projetos_contato'])->name('admin.contatos_por_projeto');
     });
 });
 

@@ -18,159 +18,34 @@
         </div>
     </div>
     <!-- Hero End -->
-     <div class="container-fluid py-5">
-        <div class="container col-md-12 card border-0 shadow p-4">
-            <div class="row">
-                <h2 class="text-center">
-                    Detalhes do projeto
-                </h2>
-            </div>
-            <div class="row p-4">
-                {!! $projeto->detalhes !!}
-            </div>
-        </div>
-     </div>
 
+    {{-- CARD DETALHES DO PROJETO --}}
     <div class="container-fluid py-5">
-        <div class="container col-md-7">
-            <h2 class="d-flex justify-content-between align-items-center">
-                <a type="button" data-bs-target="#carouselExample" data-bs-slide="prev"><i class="fa-solid fa-chevron-left"></i></a>
-                Imagens do projeto 
-                <a type="button" data-bs-target="#carouselExample" data-bs-slide="next"><i class="fa-solid fa-chevron-right"></i></a></h2>
-            <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-inner">
-                    @if($projeto->fotos->slice(0 ,-1)->isNotEmpty())
-                        @foreach($projeto->fotos->slice(0 ,-1)->values() as $index => $foto)
-                            <div class="carousel-item {{ $index === 0 ? 'active' : '' }}">
-                                <img style="min-height: 500px; max-height: 500px;" 
-                                    src="{{ asset('storage/' . $foto->path) }}" 
-                                    class="d-block w-100" alt="Imagem do projeto">
-                            </div>
-                        @endforeach
-                    @else
-                        <div class="carousel-item active">
-                            <img style="min-height: 500px; max-height: 500px;" 
-                                src="{{ asset('img/default_carousel.jpg') }}" 
-                                class="d-block w-100" alt="Imagem padrão">
-                        </div>
-                    @endif
-                </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
-            </div>
-        </div>
+        @include('main.projeto.partials._projeto_detalhes')
     </div>
 
+    {{-- CARD DE CARROSSEL COM IMAGENS DO PROJETO --}}
+    <div class="container-fluid py-5">
+        @include('main.projeto.partials._projeto_carrossel')
+    </div>
+
+    {{-- CONTAINER COM CARDS DE INFORMAÇÕES E VALORES --}}
     <div class="container-fluid py-5">
             <div class="container">
-                <div class="d-flex justify-content-between">
-                    <div class="col-md-5 card border-0 shadow py-5">
-                        <h2 class="text-center mb-4">Informações do projeto</h2>
-                        <div class="d-flex align-items-center justify-content-center">
-                            <i class="fa-solid fa-people-group"></i>&nbsp; 
-                            <h5 class="m-0">Autor: {{ $projeto->autor_projeto }}</h5>
-                        </div>
-                        <div class="d-flex align-items-center justify-content-center">
-                            <i class="fa-solid fa-magnifying-glass"></i>&nbsp; 
-                            <h5 class="m-0">Status: 
-                                @if ($projeto->status == 'AN')
-                                    Em andamento/desenvolvimento
-                                @elseif ($projeto->status == 'PI')
-                                    Pronto para investimento
-                                @elseif ($projeto->status == 'CN')
-                                    Concluído
-                                @endif
-                            </h5>
-                        </div>
-                        <div class="d-flex align-items-center justify-content-center">
-                            <i class="fa-solid fa-calendar"></i>&nbsp; 
-                            <h5 class="m-0">Data de postagem: {{ date_format($projeto->created_at, 'd/m/Y')}}</h5>
-                        </div>
-                        <div class="d-flex align-items-center justify-content-center">
-                            <i class="fa-solid fa-calendar"></i>&nbsp; 
-                            <h5 class="m-0">Última modificação: {{ date_format($projeto->updated_at, 'd/m/Y')}}</h5>
-                        </div>
-                    </div>
+                <div class="row gap-4 justify-content-center">
+                    {{-- CARD INFORMAÇÕES DO PROJETO --}}
+                    @include('main.projeto.partials._projeto_informacoes')
 
-                    <div class="col-md-5 card border-0 shadow py-5">
-                        <h2 class="text-center mb-4">Valores para investimento</h2>
-                        <div class="d-flex align-items-center justify-content-center">
-                        <i class="fa-solid fa-money-bill-trend-up"></i>&nbsp; 
-                            <h5 class="m-0">Valor mínimo: {{ 'R$ ' . number_format($projeto->valor_minimo, 2, ',', '.') }}</h5>
-                        </div>
-                        <div class="d-flex align-items-center justify-content-center">
-                        <i class="fa-solid fa-money-bill-trend-up"></i>&nbsp; 
-                            <h5 class="m-0">Valor máximo: {{ 'R$ ' . number_format($projeto->valor_maximo, 2, ',', '.') }}</h5>
-                        </div>
-                    </div>
+                    {{-- CARD VALORES DO PROJETO --}}
+                    @include('main.projeto.partials._projeto_valores')
                 </div>
             </div>
         </div>
     </div>
 
+    {{-- CONTAINER DE CONTATO DO PROJETO --}}
     <div class="container-fluid py-5">
-        <div class="container">
-            <div class="row">
-                <h2 class="text-center">
-                    Entre em contato
-                </h2>
-                <p class="text-center">
-                    Esse formulário é para entrar em contato com a equipe de desenvolvimento sobre investimentos, objetivos e resultados ou dúvidas sobre este projeto. Caso queira falar de outro use o formulário do projeto que deseja clicando <a href="{{ route('projetos') }}"> aqui</a>.<br> Caso queira tratar outro assunto, clique <a href="{{ route('contato') }}">aqui</a>
-                </p>
-            </div>
-            <form action="{{ route('projetos.enviar_contato') }}" method="post" enctype="multipart/form-data">
-                @csrf
-                <div class="row g-3">
-                    <input type="hidden" name="projeto_id" value="{{ $projeto->id }}">
-                    <input type="hidden" name="hash" value="{{ $hash }}">
-                    <div class="col-md-4">
-                        <div class="form-floating">
-                            <input name="nome" maxlength="100" type="text" class="form-control" id="nome" placeholder="Nome" required>
-                            <label for="nome">Nome<span class="text-danger">*</span></label>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="form-floating">
-                            <input name="email" type="email" class="form-control" id="email" placeholder="E-mail" required>
-                            <label for="email">E-mail<span class="text-danger">*</span></label>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="form-floating">
-                            <input name="telefone" type="tel" class="form-control" id="phone" placeholder="Seu telefone">
-                            <label for="phone">Telefone</label>
-                        </div>
-                    </div>
-                    <div class="col-12">
-                        <div class="form-floating">
-                            <textarea name="mensagem" maxlength="1000" class="form-control" placeholder="Leave a message here" id="message" style="height: 150px" required autocomplete="off"></textarea>
-                            <label for="message">Mensagem<span class="text-danger">*</span></label>
-                        </div>
-                    </div>
-                    <div class="col-12">
-                        <div class="form-check">
-                        <input class="form-check-input" name="autorizacao" type="checkbox" id="flexCheckDefault">
-                        <label class="form-check-label" for="flexCheckDefault">
-                            Eu autorizo o SENAI-RO a enviar mensagens automáticas sobre novos projetos. <a href="#">Saiba mais</a>
-                        </label>
-                        </div>
-                    </div>
-                    <div class="col-12 text-center">
-                        <div class="h-captcha" data-sitekey="17509ae2-c4ae-4eb0-93cc-e36a9ffc50c0"></div>
-                    </div>
-                    <div class="col-12">
-                        <button class="btn btn-primary w-100 py-3" type="submit">Enviar mensagem</button>
-                        <small>Ao enviar a mensagem você automaticamente estará concordando com o <a href="#">Termo de Consentimento</a> da plataforma.</small>
-                    </div>
-                </div>
-            </form>
-        </div>
+        @include('main.projeto.partials._projeto_contato')
     </div>
 
     <script src="https://js.hcaptcha.com/1/api.js" async defer></script>
