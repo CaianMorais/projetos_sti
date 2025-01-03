@@ -39,8 +39,8 @@
                 <a type="button" data-bs-target="#carouselExample" data-bs-slide="next"><i class="fa-solid fa-chevron-right"></i></a></h2>
             <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">
-                    @if($projeto->fotos->skip(1)->isNotEmpty())
-                        @foreach($projeto->fotos->skip(1)->values() as $index => $foto)
+                    @if($projeto->fotos->slice(0 ,-1)->isNotEmpty())
+                        @foreach($projeto->fotos->slice(0 ,-1)->values() as $index => $foto)
                             <div class="carousel-item {{ $index === 0 ? 'active' : '' }}">
                                 <img style="min-height: 500px; max-height: 500px;" 
                                     src="{{ asset('storage/' . $foto->path) }}" 
@@ -124,9 +124,11 @@
                     Esse formulário é para entrar em contato com a equipe de desenvolvimento sobre investimentos, objetivos e resultados ou dúvidas sobre este projeto. Caso queira falar de outro use o formulário do projeto que deseja clicando <a href="{{ route('projetos') }}"> aqui</a>.<br> Caso queira tratar outro assunto, clique <a href="{{ route('contato') }}">aqui</a>
                 </p>
             </div>
-            <form>
+            <form action="{{ route('projetos.enviar_contato') }}" method="post" enctype="multipart/form-data">
+                @csrf
                 <div class="row g-3">
                     <input type="hidden" name="projeto_id" value="{{ $projeto->id }}">
+                    <input type="hidden" name="hash" value="{{ $hash }}">
                     <div class="col-md-4">
                         <div class="form-floating">
                             <input name="nome" maxlength="100" type="text" class="form-control" id="nome" placeholder="Nome" required>
@@ -155,7 +157,7 @@
                         <div class="form-check">
                         <input class="form-check-input" name="autorizacao" type="checkbox" id="flexCheckDefault">
                         <label class="form-check-label" for="flexCheckDefault">
-                            Eu autorizo o SENAI-RO a armazenar meus dados para receber mensagens sobre novos projetos. <a href="#">Saiba mais</a>
+                            Eu autorizo o SENAI-RO a enviar mensagens automáticas sobre novos projetos. <a href="#">Saiba mais</a>
                         </label>
                         </div>
                     </div>
@@ -164,6 +166,7 @@
                     </div>
                     <div class="col-12">
                         <button class="btn btn-primary w-100 py-3" type="submit">Enviar mensagem</button>
+                        <small>Ao enviar a mensagem você automaticamente estará concordando com o <a href="#">Termo de Consentimento</a> da plataforma.</small>
                     </div>
                 </div>
             </form>

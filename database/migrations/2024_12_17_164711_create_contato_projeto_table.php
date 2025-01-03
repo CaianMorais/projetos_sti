@@ -17,7 +17,7 @@ class CreateContatoProjetoTable extends Migration
             $table->id();
             $table->string('nome');
             $table->string('email');
-            $table->string('telefone');
+            $table->string('telefone')->nullable();
             $table->unsignedBigInteger('projeto_id');
             $table->text('mensagem');
             $table->timestamps();

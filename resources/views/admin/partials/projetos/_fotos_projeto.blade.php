@@ -9,7 +9,15 @@
         <tbody>
             @foreach($projeto->fotos as $foto)
                 <tr>
-                    <td><img src="{{ asset('storage/' . $foto->path) }}" alt="Imagem do Projeto" width="100"></td>
+                    <td>
+                        <img src="{{ asset('storage/' . $foto->path) }}" alt="Imagem do Projeto" width="100">
+                        <p>Nº: {{ $foto->id }} 
+                            @if($foto->id === $projeto->fotos->max('id'))
+                                <span class="badge bg-primary">Capa</span>
+                            @endif
+                        </p>
+                        
+                    </td>
                     <td>
                         <!-- Formulário separado para excluir a foto -->
                         <form action="{{ route('admin.projetos.fotos.destroy', $foto->id) }}" method="POST" style="display:inline;">

@@ -28,7 +28,7 @@
                 <div class="col-lg-4 wow fadeIn" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeIn;">
                     <div class="case-item position-relative overflow-hidden rounded mb-2">
                     <img class="img-fluid" style="min-width:400px; min-height:500px;" 
-                    src="{{ $projeto->fotos->isNotEmpty() ? asset('storage/' . $projeto->fotos->first()->path) : asset('img/default_project.jpg') }}" 
+                    src="{{ $projeto->fotos->isNotEmpty() ? asset('storage/' . $projeto->fotos->last()->path) : asset('img/default_project.jpg') }}" 
                     alt="Imagem do projeto">
                         <a class="case-overlay text-decoration-none" href="{{ route('projetos.ver_projeto', ['id' => $projeto->id]) }}">
                             @if($projeto->status == 'AN')

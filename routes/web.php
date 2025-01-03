@@ -26,6 +26,7 @@ Route::post('/contato/enviar', [App\Http\Controllers\ContatoController::class, '
 
 Route::get('/projetos', [App\Http\Controllers\ProjetosController::class, 'projetos'])->name('projetos');
 Route::get('/projetos/{id}', [App\Http\Controllers\ProjetosController::class, 'ver_projeto'])->name('projetos.ver_projeto');
+Route::post('/projetos/enviar_contato', [App\Http\Controllers\ProjetosController::class, 'contato_projeto'])->name('projetos.enviar_contato');
 
 Route::get('login', [App\Http\Controllers\Auth\LoginController::class, 'showLoginForm'])->name('login');
 Route::post('login', [App\Http\Controllers\Auth\LoginController::class, 'login']);
