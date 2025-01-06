@@ -34,7 +34,7 @@
                         @include('admin.partials.menu._equipe_menu')
                     </div>
                     <div class="tab-pane fade" id="contatos" role="tabpanel" aria-labelledby="contatos-tab">
-                        INSERIR INFORMAÇÃO
+                        INSERIR MANUAL DE CONTATOS NO TAB
                     </div>
                 </div>
             </div>
