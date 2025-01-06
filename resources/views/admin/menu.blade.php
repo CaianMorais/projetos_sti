@@ -19,6 +19,9 @@
                     <li class="nav-item" role="presentation">
                         <a class="nav-link" id="equipe-tab" data-bs-toggle="tab" href="#equipe" role="tab" aria-controls="equipe" aria-selected="false">Equipe</a>
                     </li>
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link" id="contatos-tab" data-bs-toggle="tab" href="#contatos" role="tab" aria-controls="contatos" aria-selected="false">Contatos</a>
+                    </li>
                 </ul>
                 <div class="tab-content" id="myTabContent">
                     <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
@@ -29,6 +32,9 @@
                     </div>
                     <div class="tab-pane fade" id="equipe" role="tabpanel" aria-labelledby="equipe-tab">
                         @include('admin.partials.menu._equipe_menu')
+                    </div>
+                    <div class="tab-pane fade" id="contatos" role="tabpanel" aria-labelledby="contatos-tab">
+                        INSERIR INFORMAÇÃO
                     </div>
                 </div>
             </div>
