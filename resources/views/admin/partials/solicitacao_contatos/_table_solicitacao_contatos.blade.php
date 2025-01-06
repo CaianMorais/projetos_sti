@@ -7,7 +7,7 @@
                     <th>NOME</th>
                     <th>EMAIL</th>
                     <th>ASSUNTO</th>
-                    <th>AÇÃO</th>
+                    <th>VER</th>
                 </tr>
             </thead>
             <tbody>
@@ -29,7 +29,7 @@
 
                         <td class="d-flex align-items-center">
                             <a href="{{ route('admin.ver_solicitacao_contato', $solicitacao->id) }}" title="Ler mensagem">
-                            <i class="bi bi-book"></i>
+                            <i class="bi bi-chevron-double-right"></i>
                             </a>
                         </td>
                     </tr>

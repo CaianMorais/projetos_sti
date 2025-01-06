@@ -65,8 +65,11 @@ Route::group(['middleware' => ['check.role:2,3']], function() {
         Route::get('solicitacoes_contato', [AdmSolicitacaoContatosController::class,'solicitacoes'])->name('admin.solicitacoes_contato');
         Route::get('solicitacoes_contato/ver/{id}', [AdmSolicitacaoContatosController::class, 'ver'])->name('admin.ver_solicitacao_contato');
 
-        Route::get('escolher', [AdmContatoProjetoController::class,'contatos_ou_projetos'])->name('admin.escolha');
         Route::get('contatos_por_projeto', [AdmContatoProjetoController::class,'projetos_contato'])->name('admin.contatos_por_projeto');
+        Route::get('ver_contato_do_projeto/{id}', [AdmContatoProjetoController::class,'ver_contato_do_projeto'])->name('admin.ver_contato_do_projeto');
+
+        Route::get('todos_contatos', [AdmContatoProjetoController::class,'todos_contatos'])->name('admin.todos_contatos');
+        Route::get('contato_por_projeto/ver/{id}', [AdmContatoProjetoController::class,'ver_contato_todos_projetos'])->name('admin.ver_contato_projeto');
     });
 });
 

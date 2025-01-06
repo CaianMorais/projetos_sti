@@ -24,7 +24,7 @@
                 <h1 class="mb-4">Veja nossos mais recentes projetos</h1>
             </div>
             {{-- PARTIAL DE MENU DE PROJETOS --}}
-            @include('main.projetos.partials._menu_projetos')
+            @include('main.projeto.partials._menu_projetos')
         </div>
     </div>
 @endsection

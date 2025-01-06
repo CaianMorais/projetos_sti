@@ -16,6 +16,7 @@ class ContatoProjeto extends Model
         'telefone',
         'projeto_id',
         'mensagem',
+        'lido',
     ];
 
     public function projeto()

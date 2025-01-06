@@ -28,20 +28,22 @@
                     </a>
                 </li>
 
-                <li class="sidebar-title">- Gerenciar contatos</li>
-
-                <li class="sidebar-item ">
-                    <a href="{{ route('admin.solicitacoes_contato') }}" class='sidebar-link'>
-                    <i class="bi bi-telephone"></i>
-                        <span>Solicitações de contato</span>
+                <li class="sidebar-item  has-sub">
+                    <a href="#" class="sidebar-link">
+                        <i class="bi bi-telephone"></i>
+                        <span>Contatos</span>
                     </a>
-                </li>
-
-                <li class="sidebar-item ">
-                    <a href="{{ route('admin.escolha') }}" class='sidebar-link'>
-                    <i class="bi bi-telephone"></i>
-                        <span>Contato via projeto</span>
-                    </a>
+                    <ul class="submenu" style="display: none;">
+                        <li class="submenu-item ">
+                            <a href="{{ route('admin.solicitacoes_contato') }}">Solicitações</a>
+                        </li>
+                        <li class="submenu-item ">
+                            <a href="{{ route('admin.todos_contatos') }}">Todos via projeto</a>
+                        </li>
+                        <li class="submenu-item ">
+                            <a href="{{ route('admin.contatos_por_projeto') }}">Por projeto</a>
+                        </li>
+                    </ul>
                 </li>
 
                 @if(auth()->user()->perfil_id == 3)
