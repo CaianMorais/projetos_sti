@@ -18,6 +18,7 @@
     <link rel="shortcut icon" href="assets/images/favicon.svg" type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.snow.css" rel="stylesheet" />
     <link rel="stylesheet" href="{{ asset('vendors/sweetalert2/sweetalert2.min.css') }}"/>
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.2.0/css/dataTables.dataTables.min.css">
 </head>
 
 <body>

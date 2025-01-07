@@ -65,7 +65,7 @@
                 </li>
 
                 <li class="sidebar-item ">
-                    <a href="#" class='sidebar-link'>
+                    <a href="{{ route('admin.dados_armazenados') }}" class='sidebar-link'>
                     <i class="bi bi-cloud-fill"></i>
                         <span>Contatos armazenados</span>
                     </a>

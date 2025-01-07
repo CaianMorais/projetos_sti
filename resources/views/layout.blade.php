@@ -100,7 +100,7 @@
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Páginas</a>
                             <div class="dropdown-menu bg-light mt-2">
-                                <a href="feature.html" class="dropdown-item">Nossa equipe</a>
+                                <a href="{{ route('equipe') }}" class="dropdown-item">Nossa equipe</a>
                                 <a href="team.html" class="dropdown-item">Certificação CAPDA</a>
                             </div>
                         </div>
@@ -162,9 +162,9 @@
                 <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.5s">
                     <h5 class="text-white mb-4">Links</h5>
                     <a class="btn btn-link" href="">Equipe</a>
-                    <a class="btn btn-link" href="">Projetos</a>
+                    <a class="btn btn-link" href="{{ route('projetos') }}">Projetos</a>
                     <a class="btn btn-link" href="">Certificação</a>
-                    <a class="btn btn-link" href="">Contato</a>
+                    <a class="btn btn-link" href="{{ route('contato') }}">Contato</a>
                 </div>
                 {{--
                 <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.7s">

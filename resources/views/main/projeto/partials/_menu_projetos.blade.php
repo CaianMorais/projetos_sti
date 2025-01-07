@@ -23,3 +23,8 @@
         </div>
     @endforeach
 </div>
+
+{{-- Paginação --}}
+<div class="d-flex justify-content-center">
+    {{ $projetos->links('pagination::bootstrap-4') }}
+</div>

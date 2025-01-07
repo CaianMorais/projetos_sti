@@ -14,7 +14,7 @@ class ProjetosController extends Controller
     {
         $projetos = Projetos::orderBy('id', 'desc')
         ->with('fotos')
-        ->paginate(20);
+        ->paginate(9);
 
         return view('main.projeto.projetos')
         ->with('projetos', $projetos);

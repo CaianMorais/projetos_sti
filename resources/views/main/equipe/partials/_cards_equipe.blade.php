@@ -1,0 +1,25 @@
+<div class="row">
+    @foreach($equipe as $membro)
+        <div class="col-md-4 col-lg-3 col-sm-12">
+            <div class="col-12 wow fadeIn" data-wow-delay="0.1s"
+                style="visibility: visible; animation-delay: 0.1s; animation-name: fadeIn;">
+                <div class="team-item bg-white text-center rounded p-4 pt-0">
+                    <img class="img-fluid rounded-circle p-4" src="{{ asset('storage/' . $membro->path_foto) }}"
+                        alt="Foto do membro da equipe">
+                    <h5 class="mb-0">{{ $membro->nome }}</h5>
+                    <small>{{ $membro->bio }}</small>
+                    <div class="d-flex justify-content-center mt-3">
+                        @if(!is_null($membro->linkedin))
+                            <a class="btn btn-square btn-primary m-1" href="{{ $membro->linkedin }}" target="_blank"><i
+                                    class="fab fa-linkedin-in"></i></a>
+                        @endif
+                        @if(!is_null($membro->instagram))
+                            <a class="btn btn-square btn-primary m-1" href="{{ $membro->instagram }}" target="_blank"><i
+                                    class="fab fa-instagram"></i></a>
+                        @endif
+                    </div>
+                </div>
+            </div>
+        </div>
+    @endforeach
+</div>

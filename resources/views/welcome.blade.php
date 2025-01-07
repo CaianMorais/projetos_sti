@@ -11,8 +11,8 @@
                     <div class="btn btn-sm border rounded-pill text-white px-3 mb-3 animated slideInRight">Início</div>
                     <h1 class="display-4 text-white mb-4 animated slideInRight">Projetos do STI do SENAI-RO</h1>
                     <p class="text-white mb-4 animated slideInRight">A Coordenação de Soluções em Tecnologias e Inovação (STI) do SENAI Rondônia é credenciado pelo Comitê das Atividades de Pesquisa e Desenvolvimento na Amazônia (CAPDA) como instituição habilitada à execução de atividade de Pesquisa, Desenvolvimento e Inovação (PD&I).</p>
-                    <a href="" class="btn btn-light py-sm-3 px-sm-5 rounded-pill me-3 animated slideInRight">Saiba mais</a>
-                    <a href="" class="btn btn-outline-light py-sm-3 px-sm-5 rounded-pill animated slideInRight">Ver projetos</a>
+                    <a target="_blank" href="https://www.in.gov.br/en/web/dou/-/resolucao-capda-n-49-de-1-de-fevereiro-de-2024-544273654" class="btn btn-light py-sm-3 px-sm-5 rounded-pill me-3 animated slideInRight">Saiba mais</a>
+                    <a href="{{ route('projetos') }}" class="btn btn-outline-light py-sm-3 px-sm-5 rounded-pill animated slideInRight">Ver projetos</a>
                 </div>
                 <div class="col-lg-6 align-self-end text-center text-lg-end">
                     <img class="img-fluid" src="img/welcome_banner.png" alt="Banner tela inicial">
@@ -96,9 +96,9 @@
                 <div class="col-md-7 py-5 newsletter-text wow fadeIn" data-wow-delay="0.5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeIn;">
                     <div class="btn btn-sm border rounded-pill text-white px-3 mb-3">Contato</div>
                     <h1 class="text-white mb-4">Gostou das vantagens e quer investir?</h1>
-                    <p class="text-white">Escolha um projeto ou entre em contato conosco para que nossa equipe contate você para saber mais.</p>
-                    <a class="btn btn-outline-light rounded-pill px-4" href="#">Veja os projetos</a>
-                    <a class="btn btn-light rounded-pill px-4" href="#">Entre com contato conosco</a>
+                    <p class="text-white">Envia uma mensagem através de um projeto ou entre em contato conosco para que nossa equipe responda você com mais informações.</p>
+                    <a class="btn btn-outline-light rounded-pill px-4" href="{{ route('projetos') }}">Veja os projetos</a>
+                    <a class="btn btn-light rounded-pill px-4" href="{{route('contato') }}">Entre com contato conosco</a>
                 </div>
             </div>
         </div>

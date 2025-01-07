@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdmContatoProjetoController;
+use App\Http\Controllers\AdmContatosArmazenadosController;
 use App\Http\Controllers\AdmEquipeController;
 use App\Http\Controllers\AdmPerfisController;
 use App\Http\Controllers\AdmProjetosController;
@@ -28,6 +29,8 @@ Route::post('/contato/enviar', [App\Http\Controllers\ContatoController::class, '
 Route::get('/projetos', [App\Http\Controllers\ProjetosController::class, 'projetos'])->name('projetos');
 Route::get('/projetos/{id}', [App\Http\Controllers\ProjetosController::class, 'ver_projeto'])->name('projetos.ver_projeto');
 Route::post('/projetos/enviar_contato', [App\Http\Controllers\ProjetosController::class, 'contato_projeto'])->name('projetos.enviar_contato');
+
+Route::get('equipe', [App\Http\Controllers\EquipeController::class, 'equipe'])->name('equipe');
 
 Route::get('login', [App\Http\Controllers\Auth\LoginController::class, 'showLoginForm'])->name('login');
 Route::post('login', [App\Http\Controllers\Auth\LoginController::class, 'login']);
@@ -85,5 +88,9 @@ Route::group(['middleware' => ['check.role:3']], function () {
 
         //PERFIS
         Route::get('perfis', [AdmPerfisController::class,'perfis'])->name('admin.perfis');
+
+        //DADOS ARMAZENADOS
+        Route::get('dados_armazenados', [AdmContatosArmazenadosController::class,'dados'])->name('admin.dados_armazenados');
+        Route::get('dados_armazenados/delete/{id}', [AdmContatosArmazenadosController::class,'destroy'])->name('admin.dados_armazenados.delete');
     });
 });
