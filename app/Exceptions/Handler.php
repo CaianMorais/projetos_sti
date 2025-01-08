@@ -38,4 +38,14 @@ class Handler extends ExceptionHandler
             //
         });
     }
+    public function render($request, Throwable $exception)
+    {
+        if ($exception instanceof \Symfony\Component\HttpKernel\Exception\NotFoundHttpException) {
+            return redirect()
+                ->route('home')
+                ->with('toast_error', 'A página solicitada não foi encontrada.');
+        }
+
+        return parent::render($request, $exception);
+    }
 }

@@ -7,6 +7,13 @@ use App\Http\Controllers\AdmPerfisController;
 use App\Http\Controllers\AdmProjetosController;
 use App\Http\Controllers\AdmSolicitacaoContatosController;
 use App\Http\Controllers\AdmUsuariosController;
+use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\CapdaController;
+use App\Http\Controllers\ContatoController;
+use App\Http\Controllers\EquipeController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ProjetosController;
+use App\Http\Controllers\SobreController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -21,20 +28,25 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/contato', [App\Http\Controllers\ContatoController::class, 'contato'])->name('contato');
-Route::post('/contato/enviar', [App\Http\Controllers\ContatoController::class, 'store'])->name('contato.enviar');
+Route::get('/', [HomeController::class, 'index'])->name('home');
+// Route::get('/home', [HomeController::class, 'index'])->name('home');
 
-Route::get('/projetos', [App\Http\Controllers\ProjetosController::class, 'projetos'])->name('projetos');
-Route::get('/projetos/{id}', [App\Http\Controllers\ProjetosController::class, 'ver_projeto'])->name('projetos.ver_projeto');
-Route::post('/projetos/enviar_contato', [App\Http\Controllers\ProjetosController::class, 'contato_projeto'])->name('projetos.enviar_contato');
+Route::get('/contato', [ContatoController::class, 'contato'])->name('contato');
+Route::post('/contato/enviar', [ContatoController::class, 'store'])->name('contato.enviar');
 
-Route::get('equipe', [App\Http\Controllers\EquipeController::class, 'equipe'])->name('equipe');
+Route::get('/projetos', [ProjetosController::class, 'projetos'])->name('projetos');
+Route::get('/projetos/{id}', [ProjetosController::class, 'ver_projeto'])->name('projetos.ver_projeto');
+Route::post('/projetos/enviar_contato', [ProjetosController::class, 'contato_projeto'])->name('projetos.enviar_contato');
 
-Route::get('login', [App\Http\Controllers\Auth\LoginController::class, 'showLoginForm'])->name('login');
-Route::post('login', [App\Http\Controllers\Auth\LoginController::class, 'login']);
-Route::post('logout', [App\Http\Controllers\Auth\LoginController::class, 'logout'])->name('logout');
+Route::get('quem_somos', [SobreController::class, 'sobre'])->name('quem_somos');
+
+Route::get('equipe', [EquipeController::class, 'equipe'])->name('equipe');
+
+Route::get('capda', [CapdaController::class, 'capda'])->name('capda');
+
+Route::get('login', [LoginController::class, 'showLoginForm'])->name('login');
+Route::post('login', [LoginController::class, 'login']);
+Route::post('logout', [LoginController::class, 'logout'])->name('logout');
 
 // Route::get('register', [App\Http\Controllers\Auth\RegisterController::class, 'showRegistrationForm'])->name('register');
 // Route::post('register', [App\Http\Controllers\Auth\RegisterController::class, 'register']);

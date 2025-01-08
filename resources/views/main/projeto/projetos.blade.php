@@ -11,7 +11,7 @@
                     <p class="text-white mb-4 animated slideInRight">Confira abaixo, nossos projetos que estão em desenvolvimento, prontos para investimento e os já concluídos.</p>
                 </div>
                 <div class="col-lg-6 align-self-end text-center text-lg-end">
-                    <img class="img-fluid" src="img/projects.png" alt="Banner tela inicial">
+                    <img class="img-fluid" src="{{ asset('img/projects.png') }}" alt="Banner tela inicial">
                 </div>
             </div>
         </div>

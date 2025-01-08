@@ -6,7 +6,8 @@
     sistema seguindo regras aplicadas durante o desenvolvimento e
     também com recomendações para deixar a visualização do nosso
     usuário final mais responsiva e agradável.<br><br>
-    Esse simples mas preciso manual trará informações sobre:<br>
+
+    Esse manual é um pouco <strong>abundante e verboso</strong> mas trará informações e instruções precisas sobre:<br>
 <ul>
     <li>Como criar um projeto seguindo as regras de formulário.</li>
     <li>Como editar um projeto e alterar as fotos dos projetos.</li>
@@ -14,8 +15,8 @@
     <li>Como adicionar um membro na equipe seguindo as regras de formulário.</li>
     <li>Como editar um membro da equipe e alterar sua foto.</li>
     <li>Como deletar um membro da equipe.</li>
-    <li>Como ler mensagens enviadas pelo usuário</li>
-    <li>Como acelerar o processo de resposta a esse usuário</li>
+    <li>Entender a visualização das mensagens enviadas pelo usuário. </li>
+    <li>Como ler mensagens enviadas pelo usuário.</li>
 </ul><br>
 Também é válido mencionar que caso precise entrar em contato para pedir
 uma melhoria, reportar um erro, ou até mesmo tirar uma dúvida que foi

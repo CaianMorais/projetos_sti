@@ -12,20 +12,20 @@
                 <p class="text-white mb-4 animated slideInRight">Confira abaixo, nossa equipe responsável pela supervisão e desenvolvimento dos projetos apresentados na plataforma.</p>
             </div>
             <div class="col-lg-6 align-self-end text-center text-lg-end">
-                <img class="img-fluid" src="img/team.png" alt="Banner tela inicial">
+                <img class="img-fluid" src="{{ asset('img/team.png') }}" alt="Banner tela inicial">
             </div>
         </div>
     </div>
 </div>
+<!-- Hero End -->
 
 <div class="container-fluid bg-light py-5">
-    <div class="container">
+    <div class="container py-5">
         <div class="col-md-12 col-lg-12 col-sm-12">
             {{-- PARTIAL QUE CRIA OS CARDS DE CADA MEMBRO DA EQUIPE --}}
             @include('main.equipe.partials._cards_equipe')
         </div>
     </div>
 </div>
-<!-- Hero End -->
 
 @endsection

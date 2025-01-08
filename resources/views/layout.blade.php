@@ -46,141 +46,67 @@
     </div>
     <!-- Spinner End -->
 
-    
-    @if (session('toast_error'))
+    {{-- CARREGAR TOASTS CASO TRAGA NA CONTROLLER INICIO --}}
+    @if (isset($toast_error) || session('toast_error'))
     <div class="toast-container position-fixed top-0 end-0 p-3 toast_delay" style="z-index:9999;">
-        <div class="toast align-items-center text-white bg-danger border-0 show" role="alert" aria-live="assertive" aria-atomic="true">
+        <div id="liveToast" class="toast align-items-center text-white bg-danger border-0 show" role="alert" aria-live="assertive" aria-atomic="true">
             <div class="d-flex">
                 <div class="toast-body">
-                    {{ session('toast_error') }}
+                    {{ $toast_error }}{{ session('toast_error') }}
                 </div>
                 <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
             </div>
         </div>
     </div>
-    @elseif (session('toast_success'))
+    @elseif (isset($toast_success) || session('toast_success'))
     <div class="toast-container position-fixed top-0 end-0 p-3 toast_delay" style="z-index:9999;">
-        <div class="toast align-items-center text-white bg-success border-0 show" role="alert" aria-live="assertive" aria-atomic="true">
+        <div id="liveToast" class="toast align-items-center text-white bg-success border-0 show" role="alert" aria-live="assertive" aria-atomic="true">
             <div class="d-flex">
                 <div class="toast-body">
-                    {{ session('toast_success') }}
+                {{ $toast_success }}{{ session('toast_success') }}
                 </div>
                 <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
             </div>
         </div>
     </div>
-    @elseif (session('toast_info'))
+    @elseif (isset($toast_info) || session('toast_info'))
     <div class="toast-container position-fixed top-0 end-0 p-3 toast_delay" style="z-index:9999;">
-        <div class="toast align-items-center text-dark bg-info border-0 show" role="alert" aria-live="assertive" aria-atomic="true">
+        <div id="liveToast" class="toast align-items-center text-dark bg-info border-0 show" role="alert" aria-live="assertive" aria-atomic="true">
             <div class="d-flex">
                 <div class="toast-body">
-                    {{ session('toast_info') }}
+                {{ $toast_info }}{{ session('toast_info') }}
                 </div>
                 <button type="button" class="btn-close btn-close-dark me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
             </div>
         </div>
     </div>
     @endif
+    {{-- CARREGAR TOASTS CASO TRAGA NA CONTROLLER FIM --}}
 
-    <!-- Navbar Start -->
+    {{-- NAVBAR INICIO --}}
     <div class="container-fluid sticky-top">
         <div class="container">
-            <nav class="navbar navbar-expand-lg navbar-dark p-0">
-                <a href="{{ route('home') }}" class="navbar-brand">
-                    <h1 class="text-white">Projetos STI</h1>
-                </a>
-                <button type="button" class="navbar-toggler ms-auto me-0" data-bs-toggle="collapse"
-                    data-bs-target="#navbarCollapse">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarCollapse">
-                    <div class="navbar-nav ms-auto">
-                        <a href="{{ route('home') }}" class="nav-item nav-link">Início</a>
-                        <a href="{{ route('projetos') }}" class="nav-item nav-link">Projetos</a>
-                        <div class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Páginas</a>
-                            <div class="dropdown-menu bg-light mt-2">
-                                <a href="{{ route('equipe') }}" class="dropdown-item">Nossa equipe</a>
-                                <a href="team.html" class="dropdown-item">Certificação CAPDA</a>
-                            </div>
-                        </div>
-                        <a href="{{ route('contato') }}" class="nav-item nav-link">Contato</a>
-                        @if (auth()->check())
-                            <div class="nav-item dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">{{ auth()->user()->name }}</a>
-                                <div class="dropdown-menu bg-light mt-2">
-                                    @if (auth()->user()->perfil_id === 2 || auth()->user()->perfil_id === 3)
-                                    <a href="{{ route('admin.menu') }}" class="dropdown-item">Administração</a>
-                                    @endif
-                                    <a  href="{{ route('logout') }}"  class="dropdown-item"
-                                    onclick="event.preventDefault(); document.getElementById('logout-form').submit();"{{ __('Logout') }}>Logout</a>
-                                </div>
-                            </div>
-                            
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                @csrf
-                            </form>
-                        @endif
-                    </div>
-                    {{--
-                    <butaton type="button" class="btn text-white p-0 d-none d-lg-block" data-bs-toggle="modal"
-                        data-bs-target="#searchModal"><i class="fa fa-search"></i></butaton>
-                    --}}
-                </div>
-            </nav>
+            @include('main.partials_layout._navbar')
         </div>
     </div>
-    <!-- Navbar End -->
+    {{-- NAVBAR FIM --}}
 
+
+    {{-- CONTENT INICIO --}}
     @yield('content')
+    {{-- CONTENT FIM --}}
 
-    <!-- Footer Start -->
+
+    {{-- RODAPE INICIO --}}
     <div class="container-fluid bg-dark text-white-50 footer pt-5">
         <div class="container py-5">
             <div class="row g-5">
-                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.1s">
-                    <a href="{{ route('login') }}" class="d-inline-block mb-3">
-                        <h1 class="text-white">Projetos STI</h1>
-                    </a>
-                    <p class="mb-0">Site desenvolvido pelo setor de Coordenação de Tecnologia de Informação do Sistema da Federação das Indústrias do Estado de Rondônia juntamente com o setor de Soluções em Tecnologias e Inovação.</p>
-                </div>
-                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.3s">
-                    <h5 class="text-white mb-4">Entre em contato</h5>
-                    <p><i class="fa fa-map-marker-alt me-3"></i>Rua Rui Barbosa, 1112, Arigolândia</p>
-                    <p><i class="fa fa-phone-alt me-3"></i>(69) 3216-3400</p>
-                    <p><i class="fa fa-envelope me-3"></i>sti@fiero.org.br</p>
-                    {{--
-                    <div class="d-flex pt-2">
-                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
-                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
-                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-instagram"></i></a>
-                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
-                    </div>
-                    --}}
-                </div>
-                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.5s">
-                    <h5 class="text-white mb-4">Links</h5>
-                    <a class="btn btn-link" href="">Equipe</a>
-                    <a class="btn btn-link" href="{{ route('projetos') }}">Projetos</a>
-                    <a class="btn btn-link" href="">Certificação</a>
-                    <a class="btn btn-link" href="{{ route('contato') }}">Contato</a>
-                </div>
-                {{--
-                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.7s">
-                    <h5 class="text-white mb-4">Our Services</h5>
-                    <a class="btn btn-link" href="">Robotic Automation</a>
-                    <a class="btn btn-link" href="">Machine learning</a>
-                    <a class="btn btn-link" href="">Predictive Analysis</a>
-                    <a class="btn btn-link" href="">Data Science</a>
-                    <a class="btn btn-link" href="">Robot Technology</a>
-                </div>
-                --}}
+                @include('main.partials_layout._footer')
             </div>
         </div>
         <div class="container wow fadeIn" data-wow-delay="0.1s">
             <div class="copyright">
-                <div class="row">
+                <diclass="row">
                     <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
                         &copy; <a class="border-bottom" href="#" title="Desenvolvido por Caian Quirino">Projetos STI</a>, All Right Reserved.
 
@@ -191,15 +117,15 @@
             </div>
         </div>
     </div>
-    <!-- Footer End -->
+    {{-- RODAPE FIM --}}
 
-    <!-- Back to Top -->
+
+    {{-- BOTAO DE RETORNAR AO TOPO --}}
     <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top pt-2"><i class="bi bi-arrow-up"></i></a>
 
 
     <!-- JavaScript Libraries -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="{{ asset('lib/wow/wow.min.js') }}"></script>
     <script src="{{ asset('lib/easing/easing.min.js') }}"></script>

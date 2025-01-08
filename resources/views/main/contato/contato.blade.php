@@ -11,7 +11,7 @@
                     <p class="text-white mb-4 animated slideInRight">Contate nossa equipe para tirar dúvidas gerais, basta preencher o formulário abaixo que o responderemos o mais rápido possível.</p>
                 </div>
                 <div class="col-lg-6 align-self-end text-center text-lg-end">
-                    <img class="img-fluid" src="img/contact.png" alt="Banner tela inicial">
+                    <img class="img-fluid" src="{{ asset('img/contact.png') }}" alt="Banner tela inicial">
                 </div>
             </div>
         </div>
