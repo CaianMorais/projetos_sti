@@ -22,11 +22,6 @@
         const quill = new Quill('#editor', {
             theme: 'snow',
             placeholder: 'Digite mais detalhes sobre o projeto',
-            modules: {
-                toolbar: [
-                    [{ 'list': 'ordered'}, { 'list': 'bullet' }] // Listas ordenadas e desordenadas
-                ]
-            }
         });
 
         const form = document.querySelector('.form');

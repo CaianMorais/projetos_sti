@@ -15,6 +15,9 @@
     <li>O campo Fotos do projeto só aceitará fotos em formato .jpg, .jpeg, .png e pode receber qualquer quantidade de
         fotos, porém uma única foto não pode ultrapassar o limite de 8MB de armazenamento, caso ultrapasse você receberá
         um alerta na tela e o formulário bloqueará o botão de publicar;</li>
+    <li>É <strong class="text-danger">extremamente recomendado</strong> que ao selecionar as imagens, a última seja a 
+        foto da capa. O sistema vai identificar automaticamente a última foto selecionada e carregada e a colocará como
+        capa do projeto;</li>
     <li>É recomendado começar a preencher o formulário de projeto pela foto, pois dependendo da quantidade de foto e da
         qualidade da internet no momento, o servidor pode demorar pra receber essas fotos e se o formulário for enviado
         e as fotos forem incompletas, o sistema não vai cadastrar o projeto.</li>
@@ -27,7 +30,8 @@ postagem do projeto;<br>
 tabela de projetos, significa que sua publicação caiu em um erro não tratado do sistema, nesse caso tente novamente e
 caso aconteça novamente logo em seguida, abra um chamado para a equipe de desenvolvimento entrar em ação;<br>
 - Ao publicar, seu projeto estará automaticamente postado no topo da tela de Projetos no site principal do Projetos STI
-e visível para todos com as informações que você preencheu na criação;<br><br>
+e visível para todos com as informações que você preencheu na criação e você será redirecionado para a tela de edição do
+projeto que você acabou de postar;<br><br>
 <h4>2. Como editar um projeto postado:</h4><br>
 - Acesse o menu <strong>Projetos</strong> no menu lateral;<br>
 - No centro da tela, se você tiver um projeto postado, ele aparecerá numa tabela;<br>
@@ -44,7 +48,10 @@ projeto;<br>
 - Para remover uma foto, basta apertar uma vez no botão <button class="btn btn-danger">Excluir</button> na linha da foto
 na tabela;<br>
 - Para adicionar uma foto ou mais, apenas insira-as no formulário e aperte em <button
-    class="btn btn-primary">Atualizar</button><br>
+class="btn btn-primary">Atualizar</button><br>
+- Caso seja necessário alterar as imagens do carrossel de imagens na página do projeto, primeiro
+<strong class="text-danger">exclua a foto de capa atual </strong>, suba as novas imagens pro carrossel e carregue
+novamente a foto de capa;<br>
 - <strong>ATENTE-SE AS REGRAS PARA ADICIONAR FOTOS NO TUTOTIAL DE CRIAÇÃO!</strong><br><br>
 <h4>4. Como excluir um projeto:</h4><br>
 - Acesse o menu <strong>Projetos</strong> no menu lateral;<br>

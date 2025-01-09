@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\ProjetoCriadoMail;
+use App\Models\ContatoArmazenado;
 use App\Models\Projetos;
 use App\Models\FotosProjeto;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Storage;
 
 class AdmProjetosController extends Controller
@@ -88,7 +91,12 @@ class AdmProjetosController extends Controller
             }
         }
 
-        return redirect()->back()->with('toast_success', 'Projeto criado com sucesso!');
+        $contatos = ContatoArmazenado::pluck('email');
+        foreach($contatos as $email){
+            Mail::to($email)->send(new ProjetoCriadoMail($projeto));
+        }
+
+        return redirect()->route('admin.projetos.editar', $projeto->id)->with('toast_success', 'Projeto criado com sucesso!');
     }
 
     // EDITAR PROJETO

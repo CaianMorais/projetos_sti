@@ -38,7 +38,7 @@
 
                 Swal.fire({
                     title: 'Tem certeza?',
-                    text: "Você não poderá reverter essa ação!",
+                    text: "TODAS as mensagens relacionadas a esse projeto também serão deletados.",
                     icon: 'warning',
                     showCancelButton: true,
                     confirmButtonColor: '#3085d6',

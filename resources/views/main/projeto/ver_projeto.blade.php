@@ -20,17 +20,17 @@
     <!-- Hero End -->
 
     {{-- CARD DETALHES DO PROJETO --}}
-    <div class="container-fluid py-5">
+    <div class="container-fluid py-5 bg-light">
         @include('main.projeto.partials._projeto_detalhes')
     </div>
 
     {{-- CARD DE CARROSSEL COM IMAGENS DO PROJETO --}}
-    <div class="container-fluid py-5">
+    <div class="container-fluid py-5 bg-light">
         @include('main.projeto.partials._projeto_carrossel')
     </div>
 
     {{-- CONTAINER COM CARDS DE INFORMAÇÕES E VALORES --}}
-    <div class="container-fluid py-5">
+    <div class="container-fluid py-5 bg-light">
             <div class="container">
                 <div class="row gap-4 justify-content-center">
                     {{-- CARD INFORMAÇÕES DO PROJETO --}}
@@ -44,7 +44,7 @@
     </div>
 
     {{-- CONTAINER DE CONTATO DO PROJETO --}}
-    <div class="container-fluid py-5">
+    <div class="container-fluid py-5 bg-light">
         @include('main.projeto.partials._projeto_contato')
     </div>
 

@@ -18,7 +18,7 @@
     </div>
     <!-- Hero End -->
 
-    <div class="container-fluid py-5">
+    <div class="container-fluid py-5 bg-light">
         <div class="container">
             <div class="row justify-content-center">
                 {{-- FORMULARIO DE CONTATO --}}
