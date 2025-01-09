@@ -5,7 +5,7 @@
                 style="visibility: visible; animation-delay: 0.1s; animation-name: fadeIn;">
                 <div class="team-item bg-white text-center rounded p-4 pt-0">
                     <img class="img-fluid rounded-circle p-4" src="{{ asset('storage/' . $membro->path_foto) }}"
-                        alt="Foto do membro da equipe">
+                        alt="Foto de {{ $membro->nome }}">
                     <h5 class="mb-0">{{ $membro->nome }}</h5>
                     <small>{{ $membro->bio }}</small>
                     <div class="d-flex justify-content-center mt-3">
@@ -17,6 +17,9 @@
                             <a class="btn btn-square btn-primary m-1" href="{{ $membro->instagram }}" target="_blank"><i
                                     class="fab fa-instagram"></i></a>
                         @endif
+                        <a class="btn btn-square btn-primary m-1" title="Detalhes" data-id="{{ $membro->id }}" data-bs-toggle="modal" data-bs-target="#modalMembro"
+                            href="javascript:void(0);"><i class="fa-solid fa-info"></i>
+                        </a>
                     </div>
                 </div>
             </div>

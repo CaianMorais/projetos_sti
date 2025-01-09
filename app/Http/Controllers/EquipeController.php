@@ -13,4 +13,11 @@ class EquipeController extends Controller
 
         return view('main.equipe.equipe', compact('equipe'));
     }
+    
+    public function json_equipe($id)
+    {
+        $equipe = Equipe::findOrFail($id);
+
+        return response()->json($equipe);
+    }
 }

@@ -41,6 +41,7 @@ Route::post('/projetos/enviar_contato', [ProjetosController::class, 'contato_pro
 Route::get('quem_somos', [SobreController::class, 'sobre'])->name('quem_somos');
 
 Route::get('equipe', [EquipeController::class, 'equipe'])->name('equipe');
+Route::get('equipe/{id}', [EquipeController::class, 'json_equipe'])->name('equipe.ver_equipe');
 
 Route::get('capda', [CapdaController::class, 'capda'])->name('capda');
 

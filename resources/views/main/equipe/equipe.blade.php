@@ -28,4 +28,56 @@
     </div>
 </div>
 
+<div class="modal fade" id="modalMembro" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    @include('main.equipe.partials._modal_equipe')
+</div>
+
+{{-- SCRIPT QUE FAZ REQUISIÇÃO AJAX. CASO NÃO CARREGUE A FOTO,
+COMENTE ESSE SCRIPT E USE O SCRIPT COMENTADO DE BAIXO --}}
+<script src="{{ asset('js/modal_equipe.js') }}"></script>
+
+{{--
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const modal = document.getElementById("modalMembro");
+
+        modal.addEventListener("show.bs.modal", function(event) {
+            const button = event.relatedTarget;
+            const id = button.getAttribute("data-id");
+            const url = `/equipe/${id}`;
+
+            fetch(url)
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById("modal-content").innerHTML = `
+                        <div class="d-flex justify-content-center">
+                            <img class="img-fluid rounded-circle p-4 text-center" width="256" height="256" src="{{ asset('storage/') }}/${data.path_foto}" alt="Foto de ${data.nome}">
+                        </div>
+                        <div class="d-flex justify-content-between">
+                            <h5 class="mb-0">${data.nome}</h5>
+                            <h5 class="mb-0"><i class="fa-solid fa-phone"></i> ${data.telefone}</h5>
+                        </div>
+                        <div class="d-flex justify-content-start">
+                            <small class="mb-2">${data.bio}</small>
+                        </div>
+                        <p>${data.descricao}</p>
+                        <div class="d-flex justify-content-center mt-3">
+                            ${data.linkedin ? `<a class="btn btn-square btn-primary m-1" href="${data.linkedin}" target="_blank"><i class="fab fa-linkedin-in"></i></a>` : ""}
+                            ${data.instagram ? `<a class="btn btn-square btn-primary m-1" href="${data.instagram}" target="_blank"><i class="fab fa-instagram"></i></a>` : ""}
+                        </div>
+                    `;
+                    document.getElementById("tituloModalMembro").innerText = "Detalhes de " + data.nome;
+                })
+                .catch(error => {
+                console.error("Erro ao carregar informações do membro:", error);
+                document.getElementById("modal-content").innerHTML = `
+                    <p class="text-danger">Erro ao carregar as informações. Tente novamente mais tarde.</p>
+                `;
+            });
+        });
+    });
+</script>
+--}}
+
+
 @endsection
