@@ -4,7 +4,7 @@
     
 <h3 align="center">Registros</h3>
 <p>06/01/2025: Adicionado 4 screenshots do layout do projeto;<br>
-08/01/2025: Adicionado 1 screenshot, barra de progresso ampliada;
+08/01/2025: Adicionado 1 screenshot, barra de progresso ampliada;<br>
 09/01/2025: Projeto em estágios finais de desenvolvimento;</p>
 <br>
     
