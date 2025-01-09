@@ -17,10 +17,11 @@
     <li>Como deletar um membro da equipe.</li>
     <li>Entender a visualização das mensagens enviadas pelo usuário. </li>
     <li>Como ler mensagens enviadas pelo usuário.</li>
-</ul><br>
+</ul>
+{{--<br>
 Também é válido mencionar que caso precise entrar em contato para pedir
 uma melhoria, reportar um erro, ou até mesmo tirar uma dúvida que foi
 esquecida através desse manual, basta abrir um chamado no <a target="_blank" href="http://glpi.fiero.org.br"> GLPI</a>
 com a categoria <strong>TI > APLICATIVOS
-    > PROJETOS STI</strong>.
+    > PROJETOS STI</strong>.--}}
 </p>

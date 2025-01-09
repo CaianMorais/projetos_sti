@@ -1,10 +1,11 @@
 <h3 align="center">Progresso do projeto<h3>
-<p align="center"><img src="https://progress-bar.xyz/71/?title=Conclu%C3%ADdo&width=300&progress_color=88f289"></p>
+<p align="center"><img src="https://progress-bar.xyz/80/?title=Conclu%C3%ADdo&width=300&progress_color=88f289"></p>
 <br>
     
 <h3 align="center">Registros</h3>
 <p>06/01/2025: Adicionado 4 screenshots do layout do projeto;<br>
-08/01/2025: Adicionado 1 screenshot, barra de progresso ampliada;</p>
+08/01/2025: Adicionado 1 screenshot, barra de progresso ampliada;
+09/01/2025: Projeto em estágios finais de desenvolvimento;</p>
 <br>
     
 <h2 align="center">:camera:</h2>
