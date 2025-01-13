@@ -1,5 +1,8 @@
 @extends('layout')
 
+@section('title', 'Nossa equipe')
+
+
 @section('content')
 
 <!-- Hero Start -->

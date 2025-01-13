@@ -1,5 +1,7 @@
 @extends('layout')
 
+@section('title', 'Quem somos')
+
 @section('content')
 
 <style>

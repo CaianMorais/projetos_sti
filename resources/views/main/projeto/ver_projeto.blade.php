@@ -1,5 +1,7 @@
 @extends('layout')
 
+@section('title', $projeto->nome_projeto)
+
 @section('content')
 
 <!-- Hero Start -->

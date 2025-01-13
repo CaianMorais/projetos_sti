@@ -1,5 +1,7 @@
 @extends('layout')
 
+@section('title', 'Certificação CAPDA')
+
 @section('content')
 
 <!-- Hero Start -->

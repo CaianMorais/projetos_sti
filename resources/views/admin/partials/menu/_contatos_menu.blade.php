@@ -7,7 +7,7 @@ Entenda como acessar e ver as mensagens:<br><br>
 - No centro da tela, uma tabela aparecerá, as linhas da tabela que estão em vermelho são mensagens que foram enviadas e ainda não foram lidas por nenhum administrador. As linhas em cor verde são mensagens que já foram lidas.<br>
 - Na coluna mais a direita da tabela, aperte na seta dupla para acessar a mensagem (se a mensagem aberta for uma não lida, ela será automaticamente marcada como lida).<br>
 - Ao abrir a mensagem, você verá que o card no centro da tela primeiro apresenta os Dados do contato que enviou aquela mensagem, esses dados vão servir para caso do administrador necessitar dar um tipo de resposta para o usuário remetente da mensagem.<br>
-- <strong class="text-danger">ATENÇÃO: SOB HIPÓTESE ALGUMA, COMPARTILHE ESSES DADOS DO USUÁRIO COM ALGUÉM</strong><br>
+- <strong class="text-danger">ATENÇÃO: SOB NENHUMA HIPÓTESE OS DADOS DO USUÁRIO DEVEM SER COMPARTILHADOS COM ALGUÉM!</strong><br>
 - A esquerda do card, aperte na opção <strong>Mensagem</strong> para ler o assunto ao qual o remetente quer tratar, e em seguida sua mensagem.<br>
 - <strong>Se a mensagem se tratar de um pedido para <span class="text-danger">remoção de dados pessoais</span> da plataforma, favor entrar em contato com a equipe de Coordenação de Tecnologia da Informação para prosseguir com a remoção.</strong><br><br>
 
@@ -18,7 +18,7 @@ Entenda como acessar e ver as mensagens:<br><br>
 - No centro da tela, uma tabela aparecerá, as linhas da tabela que estão em vermelho são mensagens que foram enviadas e ainda não foram lidas por nenhum administrador. As linhas em cor verde são mensagens que já foram lidas.<br>
 - Na coluna mais a direita da tabela, aperte na seta dupla para acessar a mensagem (se a mensagem aberta for uma não lida, ela será automaticamente marcada como lida).<br>
 - Ao abrir a mensagem, você verá que o card no centro da tela primeiro apresenta os Dados do contato que enviou aquela mensagem, esses dados vão servir para caso do administrador necessitar dar um tipo de resposta para o usuário remetente da mensagem.<br>
-- <strong class="text-danger">ATENÇÃO: SOB HIPÓTESE ALGUMA, COMPARTILHE ESSES DADOS DO USUÁRIO COM ALGUÉM</strong><br>
+- <strong class="text-danger">ATENÇÃO: SOB NENHUMA HIPÓTESE OS DADOS DO USUÁRIO DEVEM SER COMPARTILHADOS COM ALGUÉM!</strong><br>
 - A esquerda do card, aperte na opção <strong>Mensagem</strong> para ler o projeto quer conversar sobre, em seguida sua mensagem, e ao final de sua mensagem o botão <button class="btn btn-primary">Responder no e-mail</button> estará pronto para quando for pressionado automaticamente abrir seu app de e-mail e pré-preencher com o nome do projeto e com os dados do remetente uma resposta a essa mensagem que foi enviada.<br>
 - Ainda na esquerda do card, a opção <strong>Projeto</strong> <i class="bi bi-box-arrow-up-right"></i> abre uma nova guia e lhe envia para a página do projeto que o remetente visualizou antes de enviar a mensagem.<br><br>
 
@@ -31,6 +31,6 @@ Entenda como acessar e ver as mensagens:<br><br>
 
 - Na coluna mais a direita da tabela, aperte na seta dupla para acessar a mensagem (se a mensagem aberta for uma não lida, ela será automaticamente marcada como lida).<br>
 - Ao abrir a mensagem, você verá que o card no centro da tela primeiro apresenta os Dados do contato que enviou aquela mensagem, esses dados vão servir para caso do administrador necessitar dar um tipo de resposta para o usuário remetente da mensagem.<br>
-- <strong class="text-danger">ATENÇÃO: SOB HIPÓTESE ALGUMA, COMPARTILHE ESSES DADOS DO USUÁRIO COM ALGUÉM</strong><br>
+- <strong class="text-danger">ATENÇÃO: SOB NENHUMA HIPÓTESE OS DADOS DO USUÁRIO DEVEM SER COMPARTILHADOS COM ALGUÉM!</strong><br>
 - A esquerda do card, aperte na opção <strong>Mensagem</strong> para ler o projeto quer conversar sobre, em seguida sua mensagem, e ao final de sua mensagem o botão <button class="btn btn-primary">Responder no e-mail</button> estará pronto para quando for pressionado automaticamente abrir seu app de e-mail e pré-preencher com o nome do projeto e com os dados do remetente uma resposta a essa mensagem que foi enviada.<br>
 - Ainda na esquerda do card, a opção <strong>Projeto</strong> <i class="bi bi-box-arrow-up-right"></i> abre uma nova guia e lhe envia para a página do projeto que o remetente visualizou antes de enviar a mensagem.<br><br>

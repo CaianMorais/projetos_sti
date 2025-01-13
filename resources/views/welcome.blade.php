@@ -1,28 +1,50 @@
 @extends('layout')
 
-@section('title', 'Home - Projetos STI')
+@section('title', 'Início - Projetos STI')
 
 @section('content')
+
+<style>
+    .icon-link-hover:hover i {
+        animation: bounce 0.6s ease-in-out;
+    }
+
+    @keyframes bounce {
+        0%, 100% {
+            transform: translateY(0);
+        }
+        50% {
+            transform: translateY(-10px);
+        }
+    }
+</style>
+
     <!-- Hero Start -->
     <div class="container-fluid pt-5 bg-primary hero-header">
         <div class="container pt-5">
             <div class="row g-5 pt-5">
                 <div class="col-lg-6 align-self-center text-center text-lg-start mb-lg-5">
                     <div class="btn btn-sm border rounded-pill text-white px-3 mb-3 animated slideInRight">Início</div>
-                    <h1 class="display-4 text-white mb-4 animated slideInRight">STI do SENAI-RO</h1>
+                    <h1 class="display-5 text-white mb-4 animated slideInRight">Projetos de Soluções em Tecnologia e Inovação SENAI Rondônia</h1>
                     <p class="text-white mb-4 animated slideInRight">A Coordenação de Soluções em Tecnologias e Inovação (STI) do SENAI Rondônia é credenciado pelo Comitê das Atividades de Pesquisa e Desenvolvimento na Amazônia (CAPDA) como instituição habilitada à execução de atividade de Pesquisa, Desenvolvimento e Inovação (PD&I).</p>
                     <a target="_blank" href="https://www.in.gov.br/en/web/dou/-/resolucao-capda-n-49-de-1-de-fevereiro-de-2024-544273654" class="btn btn-light py-sm-3 px-sm-5 rounded-pill me-3 animated slideInRight">Saiba mais</a>
                     <a href="{{ route('projetos') }}" class="btn btn-outline-light py-sm-3 px-sm-5 rounded-pill animated slideInRight">Ver projetos</a>
                 </div>
-                <div class="col-lg-6 align-self-end text-center text-lg-end">
+                <div class="col-lg-6 align-self-end text-lg-end">
                     <img class="img-fluid" src="{{ asset('img/welcome_banner.png') }}" alt="Banner tela inicial">
                 </div>
             </div>
         </div>
     </div>
+    
     <!-- Hero End -->
+    <div class="container-fluid bg-light text-center py-5">
+        <a href="#vantagens" class="icon-link icon-link-hover">
+            <i class="fa-solid fa-angles-down fa-2xl"></i>
+        </a>
+    </div>
 
-    <div class="container-fluid bg-light py-5">
+    <div class="container-fluid bg-light py-5" id="vantagens">
         <div class="container py-5">
             <div class="row g-5 align-items-center">
                 <div class="col-lg-5 wow fadeIn" data-wow-delay="0.1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeIn;">

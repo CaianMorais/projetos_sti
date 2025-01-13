@@ -1,5 +1,7 @@
 @extends('layout')
 
+@section('title', 'Explorar projetos')
+
 @section('content')
     <!-- Hero Start -->
     <div class="container-fluid pt-5 bg-primary hero-header">
