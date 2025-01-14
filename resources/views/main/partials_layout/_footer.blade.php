@@ -21,19 +21,17 @@
     --}}
 </div>
 <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.5s">
-    <h5 class="text-white mb-4">Links</h5>
-    <a class="btn btn-link" href="{{ route('equipe') }}">Equipe</a>
+    <h5 class="text-white mb-4">Páginas</h5>
     <a class="btn btn-link" href="{{ route('projetos') }}">Projetos</a>
+    <a class="btn btn-link" href="{{ route('equipe') }}">Equipe</a>
     <a class="btn btn-link" href="{{ route('capda') }}">Certificação</a>
     <a class="btn btn-link" href="{{ route('contato') }}">Contato</a>
 </div>
-{{--
+
 <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.7s">
-    <h5 class="text-white mb-4">Our Services</h5>
-    <a class="btn btn-link" href="">Robotic Automation</a>
-    <a class="btn btn-link" href="">Machine learning</a>
-    <a class="btn btn-link" href="">Predictive Analysis</a>
-    <a class="btn btn-link" href="">Data Science</a>
-    <a class="btn btn-link" href="">Robot Technology</a>
+    <h5 class="text-white mb-4">Mais</h5>
+    <a class="btn btn-link" href="">Termo de Consentimento</a>
+    <a class="btn btn-link" href="{{ route('quem_somos') }}">Quem Somos</a>
+    <a class="btn btn-link" href="https://portal.fiero.org.br/senai" target="_blank">Portal SENAI/RO</a>
+    <a class="btn btn-link" href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#modalDetalhes">Detalhes do site</a>
 </div>
---}}

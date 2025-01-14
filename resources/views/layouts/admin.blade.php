@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="{{ asset('vendors/perfect-scrollbar/perfect-scrollbar.css') }}">
     <link rel="stylesheet" href="{{ asset('vendors/bootstrap-icons/bootstrap-icons.css') }}">
     <link rel="stylesheet" href="{{ asset('css/admin/app.css') }}">
-    <link rel="shortcut icon" href="assets/images/favicon.svg" type="image/x-icon">
+    <link rel="shortcut icon" href="{{ asset('img/favicon.jpg') }}" type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.snow.css" rel="stylesheet" />
     <link rel="stylesheet" href="{{ asset('vendors/sweetalert2/sweetalert2.min.css') }}"/>
     <link rel="stylesheet" href="https://cdn.datatables.net/2.2.0/css/dataTables.dataTables.min.css">

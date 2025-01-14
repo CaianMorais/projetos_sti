@@ -9,7 +9,7 @@
     <meta content="" name="description">
 
     <!-- Favicon -->
-    <link href="img/favicon.ico" rel="icon">
+    <link href="{{ asset('img/favicon.jpg') }}" rel="icon">
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -52,7 +52,7 @@
         <div id="liveToast" class="toast align-items-center text-white bg-danger border-0 show" role="alert" aria-live="assertive" aria-atomic="true">
             <div class="d-flex">
                 <div class="toast-body">
-                    {{ $toast_error }}{{ session('toast_error') }}
+                    {{ $toast_error ?? session('toast_error') }}
                 </div>
                 <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
             </div>
@@ -63,7 +63,7 @@
         <div id="liveToast" class="toast align-items-center text-white bg-success border-0 show" role="alert" aria-live="assertive" aria-atomic="true">
             <div class="d-flex">
                 <div class="toast-body">
-                {{ $toast_success }}{{ session('toast_success') }}
+                {{ $toast_success ?? session('toast_success') }}
                 </div>
                 <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
             </div>
@@ -74,7 +74,7 @@
         <div id="liveToast" class="toast align-items-center text-dark bg-info border-0 show" role="alert" aria-live="assertive" aria-atomic="true">
             <div class="d-flex">
                 <div class="toast-body">
-                {{ $toast_info }}{{ session('toast_info') }}
+                {{ $toast_info ?? session('toast_info') }}
                 </div>
                 <button type="button" class="btn-close btn-close-dark me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
             </div>
@@ -122,6 +122,27 @@
 
     {{-- BOTAO DE RETORNAR AO TOPO --}}
     <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top pt-2"><i class="bi bi-arrow-up"></i></a>
+
+    {{-- MODAL DETALHES SOBRE O SITE --}}
+    <div class="modal fade" id="modalDetalhes" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Sobre a plataforma</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <ul>
+                        <li><i class="fa-solid fa-network-wired"></i></i>&nbsp; Criado e hospedado internamente na FIERO</li>
+                        <li><i class="fa-brands fa-php"></i>&nbsp; Desenvolvido em Laravel com PHP 7.4.33</li>
+                        <li><i class="fa-brands fa-html5"></i>&nbsp; Template gratuito <a target="_blank" href="https://themewagon.com/themes/ai-tech-free-bootstrap-5-business-corporate-website-template/">AI.Tech</a> </li>
+                        <li><i class="fa-solid fa-terminal"></i>&nbsp; Dev: Caian Quirino</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{-- FIM DO MODAL --}}
 
 
     <!-- JavaScript Libraries -->
