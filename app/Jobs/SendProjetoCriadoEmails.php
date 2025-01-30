@@ -17,16 +17,18 @@ class SendProjetoCriadoEmails implements ShouldQueue
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
     protected $projeto;
-    protected $email;
+    protected $emails;
 
-    public function __construct(Projetos $projeto, $email)
+    public function __construct(Projetos $projeto, $emails)
     {
         $this->projeto = $projeto;
-        $this->email = $email;
+        $this->emails = $emails;
     }
 
     public function handle()
     {
-        Mail::to($this->email)->send(new ProjetoCriadoMail($this->projeto));
+        foreach ($this->emails as $email) {
+            Mail::to($email)->send(new ProjetoCriadoMail($this->projeto));
+        }
     }
 }

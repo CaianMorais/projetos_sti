@@ -93,9 +93,8 @@ class AdmProjetosController extends Controller
         }
 
         $contatos = ContatoArmazenado::pluck('email');
-        foreach($contatos as $email){
-            dispatch(new SendProjetoCriadoEmails($projeto, $email));
-        }
+        SendProjetoCriadoEmails::dispatch($projeto, $contatos);
+
 
         return redirect()
             ->route('admin.projetos.editar', $projeto->id)
