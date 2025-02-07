@@ -3,13 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Jobs\SendProjetoCriadoEmails;
-use App\Mail\ProjetoCriadoMail;
 use App\Models\ContatoArmazenado;
 use App\Models\Projetos;
 use App\Models\FotosProjeto;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
-use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Storage;
 
 class AdmProjetosController extends Controller

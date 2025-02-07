@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\ContatoProjeto;
 use App\Models\Projetos;
-use Illuminate\Http\Request;
 
 class AdmContatoProjetoController extends Controller
 {

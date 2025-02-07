@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Equipe;
-use Illuminate\Http\Request;
 
 class EquipeController extends Controller
 {

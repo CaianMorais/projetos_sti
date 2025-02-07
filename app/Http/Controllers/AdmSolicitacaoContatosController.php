@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\SolicitacaoContato;
-use Illuminate\Http\Request;
 
 class AdmSolicitacaoContatosController extends Controller
 {

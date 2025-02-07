@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Equipe;
-use Dotenv\Exception\ValidationException;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
