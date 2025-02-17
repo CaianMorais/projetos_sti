@@ -25,7 +25,7 @@
             <div class="row g-5 pt-5">
                 <div class="col-lg-6 align-self-center text-center text-lg-start mb-lg-5">
                     <div class="btn btn-sm border rounded-pill text-white px-3 mb-3 animated slideInRight">Início</div>
-                    <h1 class="display-5 text-white mb-4 animated slideInRight">Projetos de Soluções em Tecnologia e Inovação SENAI Rondônia</h1>
+                    <h1 class="display-5 text-white mb-4 animated slideInRight">Projetos de Tecnologia e Inovação SENAI Rondônia</h1>
                     <p class="text-white mb-4 animated slideInRight">A Coordenação de Soluções em Tecnologias e Inovação (STI) do SENAI Rondônia é credenciado pelo Comitê das Atividades de Pesquisa e Desenvolvimento na Amazônia (CAPDA) como instituição habilitada à execução de atividade de Pesquisa, Desenvolvimento e Inovação (PD&I).</p>
                     <a target="_blank" href="https://www.in.gov.br/en/web/dou/-/resolucao-capda-n-49-de-1-de-fevereiro-de-2024-544273654" class="btn btn-light py-sm-3 px-sm-5 rounded-pill me-3 animated slideInRight">Saiba mais</a>
                     <a href="{{ route('projetos') }}" class="btn btn-outline-light py-sm-3 px-sm-5 rounded-pill animated slideInRight">Ver projetos</a>
@@ -49,7 +49,7 @@
             <div class="row g-5 align-items-center">
                 <div class="col-lg-5 wow fadeIn" data-wow-delay="0.1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeIn;">
                     <div class="btn btn-sm border rounded-pill text-primary px-3 mb-3">Vantagens</div>
-                    <h1 class="mb-4">Vantagens de investir em projetos de STI no SENAI-RO</h1>
+                    <h1 class="mb-4">Vantagens de investir em projetos de Tecnologia e Inovação do SENAI-RO</h1>
                     <p class="mb-4">Para tornar o investimento uma opção atraente para investidores que buscam inovação, sustentabilidade e benefícios fiscais, o CAPDA oferece uma série de benefícios para esses investidores.</p>
                     <a class="btn btn-primary rounded-pill px-4" href="https://www.gov.br/suframa/pt-br/zfm/pdi/capda">Saiba mais</a>
                 </div>

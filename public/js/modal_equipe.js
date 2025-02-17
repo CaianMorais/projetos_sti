@@ -22,8 +22,8 @@ document.addEventListener("DOMContentLoaded", function() {
                     </div>
                     <p>${data.descricao}</p>
                     <div class="d-flex justify-content-center mt-3">
-                        ${data.linkedin ? `<a class="btn btn-square btn-primary m-1" href="${data.linkedin}" target="_blank"><i class="fab fa-linkedin-in"></i></a>` : ""}
-                        ${data.instagram ? `<a class="btn btn-square btn-primary m-1" href="${data.instagram}" target="_blank"><i class="fab fa-instagram"></i></a>` : ""}
+                        ${data.linkedin ? `<a class="btn btn-square btn-primary m-1" href="${data.linkedin}" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>` : ""}
+                        ${data.lattes ? `<a class="btn btn-square btn-primary m-1" href="${data.lattes}" target="_blank" title="Lattes"><i class="fa-regular fa-id-badge"></i></a>` : ""}
                     </div>
                 `;
                 document.getElementById("tituloModalMembro").innerText = "Mais sobre " + data.nome;

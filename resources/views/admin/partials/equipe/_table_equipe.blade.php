@@ -25,13 +25,13 @@
                         <i class="bi bi-linkedin" style="color: #bd0000;"></i>
                     </a>
                 @endif
-                @if (!is_null($membro->instagram))
-                    <a href="{{ $membro->instagram }}" target="_blank" title="Instagram">
-                        <i class="bi bi-instagram" style="color: #00bd39;"></i>
+                @if (!is_null($membro->lattes))
+                    <a href="{{ $membro->lattes }}" target="_blank" title="Lattes">
+                        <i class="bi bi-person-badge-fill" style="color: #00bd39;"></i>
                     </a>
                 @else
                     <a href="javascript:void(0);" title="Não cadastrado">
-                        <i class="bi bi-instagram" style="color: #bd0000;"></i>
+                        <i class="bi bi-person-badge-fill" style="color: #bd0000;"></i>
                     </a>
                 @endif
             </td>

@@ -29,8 +29,8 @@
         </div>
         <div class="col-md-6 col-12">
             <div class="form-group">
-                <label for="instagram">Instagram (Link)</label>
-                <input value="{{ old('nome', $membro->instagram) }}" type="url" id="instagram" class="form-control" name="instagram" placeholder="Link do perfil do Instagram">
+                <label for="lattes">Lattes (Link)</label>
+                <input value="{{ old('nome', $membro->lattes) }}" type="url" id="lattes" class="form-control" name="lattes" placeholder="Link do currículo Lattes">
             </div>
         </div>
         

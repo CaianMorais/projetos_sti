@@ -31,7 +31,7 @@ class AdmEquipeController extends Controller
                 'telefone' => 'nullable|string|max:15',
                 'bio' => 'required|max:100',
                 'linkedin' => 'nullable|string',
-                'instagram' => 'nullable|string',
+                'lattes' => 'nullable|string',
                 'descricao' => 'required|string',
                 'path_foto' => 'required|image|mimes:jpeg,jpg,png|max:8128',
             ]);
@@ -41,7 +41,7 @@ class AdmEquipeController extends Controller
                 'telefone' => $validatedData['telefone'],
                 'bio' => $validatedData['bio'],
                 'linkedin' => $validatedData['linkedin'],
-                'instagram' => $validatedData['instagram'],
+                'lattes' => $validatedData['lattes'],
                 'descricao' => $validatedData['descricao'],
                 'path_foto' => $validatedData['path_foto']->store('img', 'public'),
             ]);
@@ -69,7 +69,7 @@ class AdmEquipeController extends Controller
                 'telefone' => 'nullable|string|max:15',
                 'bio' => 'required|max:100',
                 'linkedin' => 'nullable|string',
-                'instagram' => 'nullable|string',
+                'lattes' => 'nullable|string',
                 'descricao' => 'required|string',
                 'path_foto' => 'image|mimes:jpeg,jpg,png|max:8128',
             ]);

@@ -10,12 +10,12 @@
                     <small>{{ $membro->bio }}</small>
                     <div class="d-flex justify-content-center mt-3">
                         @if(!is_null($membro->linkedin))
-                            <a class="btn btn-square btn-primary m-1" href="{{ $membro->linkedin }}" target="_blank"><i
+                            <a class="btn btn-square btn-primary m-1" href="{{ $membro->linkedin }}" target="_blank" title="LinkedIn"><i
                                     class="fab fa-linkedin-in"></i></a>
                         @endif
-                        @if(!is_null($membro->instagram))
-                            <a class="btn btn-square btn-primary m-1" href="{{ $membro->instagram }}" target="_blank"><i
-                                    class="fab fa-instagram"></i></a>
+                        @if(!is_null($membro->lattes))
+                            <a class="btn btn-square btn-primary m-1" href="{{ $membro->lattes }}" target="_blank" title="Lattes"><i
+                                    class="fa-regular fa-id-badge"></i></a>
                         @endif
                         <a class="btn btn-square btn-primary m-1" title="Detalhes" data-id="{{ $membro->id }}" data-bs-toggle="modal" data-bs-target="#modalMembro"
                             href="javascript:void(0);"><i class="fa-solid fa-info"></i>

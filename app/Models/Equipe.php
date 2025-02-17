@@ -11,5 +11,5 @@ class Equipe extends Model
 
     protected $table = 'equipe';
 
-    protected $fillable = ['nome','bio','descricao','linkedin','instagram','telefone','path_foto'];
+    protected $fillable = ['nome','bio','descricao','linkedin','lattes','telefone','path_foto'];
 }
