@@ -87,7 +87,7 @@
                                             <i class="fa-solid fa-arrow-trend-down fa-2x"></i>
                                         </div>
                                         <h5 class="mb-3">Redução de Riscos</h5>
-                                        <p>O credenciamento garante que os nossso projetos são viáveis e têm grande potencial para sucesso.</p>
+                                        <p>O credenciamento garante que os nossos projetos são viáveis e têm grande potencial para sucesso.</p>
                                         <a class="btn px-3 mt-auto mx-auto" href="https://www.gov.br/suframa/pt-br/zfm/pdi/capda">Saiba mais</a>
                                     </div>
                                 </div>
