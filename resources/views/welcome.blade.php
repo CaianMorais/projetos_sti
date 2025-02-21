@@ -97,7 +97,7 @@
                                         <i class="fa-solid fa-hand-holding-dollar fa-2x"></i>
                                         </div>
                                         <h5 class="mb-3">Incentivos Fiscais</h5>
-                                        <p>Investir em projetos da empresa credenciada trás benefícios fiscais como deduções de impostos, que podem melhorar a rentabilidade do investimento.</p>
+                                        <p>Investir em projetos da empresa credenciada traz benefícios fiscais como deduções de impostos, que podem melhorar a rentabilidade do investimento.</p>
                                         <a class="btn px-3 mt-auto mx-auto" href="https://www.gov.br/suframa/pt-br/zfm/pdi/capda">Saiba mais</a>
                                     </div>
                                 </div>

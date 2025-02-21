@@ -12,7 +12,7 @@
             <div class="col-lg-6 align-self-center text-center text-lg-start mb-lg-5">
                 <div class="btn btn-sm border rounded-pill text-white px-3 mb-3 animated slideInRight">Equipe</div>
                 <h1 class="display-4 text-white mb-4 animated slideInRight">Conheça nosso time</h1>
-                <p class="text-white mb-4 animated slideInRight">Confira abaixo, nossa equipe responsável pela supervisão e desenvolvimento dos projetos apresentados na plataforma.</p>
+                <p class="text-white mb-4 animated slideInRight">Apresentando abaixo nossa equipe responsável pela supervisão e desenvolvimento dos projetos apresentados na plataforma.</p>
             </div>
             <div class="col-lg-6 align-self-end text-center text-lg-end">
                 <img class="img-fluid" src="{{ asset('img/team.png') }}" alt="Banner tela inicial">
