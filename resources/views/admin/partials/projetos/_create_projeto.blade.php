@@ -61,6 +61,30 @@
             <small class="text-danger">As demais imagens serão exibidas na tela do projeto e devem ser de resolução 850x500 ou aproximado</small><br>
             <small class="text-danger">As imagens postadas que não seguirem as recomendações acima, poderão estar comprometendo a responsividade e a visualização do usuário final.</small>
         </div>
+        <div class="col-12">
+            <div class="form-check">
+                <div class="checkbox">
+                    <input type="hidden" name="visibilidade" value="0">
+
+                    <input type="checkbox" id="visibilidade" name="visibilidade" class="form-check-input" value="1" checked="">
+                    <label for="checkbox3">Visível</label>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="form-check">
+                <div class="checkbox">
+                <input type="hidden" name="notificar" value="false">
+                <input type="checkbox" id="notificar" name="notificar" value="true" class="form-check-input">
+                <label for="notificar">Notificar contatos salvos via e-mail
+                    <a type="button" data-bs-toggle="tooltip" data-bs-placement="top"
+                        data-bs-title="Caso o projeto não esteja visível, os usuários notificados não poderão acessá-los.">
+                        <i class="bi bi-question-circle-fill"></i>
+                    </a>
+                </label>
+                </div>
+            </div>
+        </div>
         <div class="col-12 d-flex justify-content-end">
             <button type="submit" id="publicar" class="btn btn-primary me-1 mb-1">Publicar</button>
             <button type="reset" class="btn btn-light-secondary me-1 mb-1">Limpar formulário</button>

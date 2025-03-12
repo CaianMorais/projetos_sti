@@ -9,7 +9,7 @@ class Projetos extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['nome_projeto', 'valor_minimo','valor_maximo','autor_projeto','descricao','detalhes','status'];
+    protected $fillable = ['nome_projeto', 'valor_minimo','valor_maximo','autor_projeto','descricao','detalhes','status','visibilidade'];
 
     public function fotos()
     {

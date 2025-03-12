@@ -1,6 +1,7 @@
 <table class="table table-striped mb-0">
     <thead>
-        <tr>
+        <tr class="text-center">
+            <th>VISÍVEL</th>
             <th>PROJETO</th>
             <th>STATUS</th>
             <th>VALORES (min - máx)</th>
@@ -10,8 +11,16 @@
     </thead>
     <tbody>
         @foreach ($projetos as $projeto)
-        <tr>
-            <td>{{ $projeto->nome_projeto }}</td>
+        <tr class="text-center">
+            <td>
+                @if($projeto->visibilidade == true)
+                <i class="bi bi-check2-circle text-success" title="Visível"></i>
+                @else
+                <i class="bi bi-x-circle text-danger" title="Não visível"></i>
+                @endif
+            </td>
+
+            <td>{{ \Illuminate\Support\Str::limit($projeto->nome_projeto, 20, '...') }}</td>
 
             @if ($projeto->status == 'PI')
             <td>{{ $projeto->status }} - Pronto para Investimento</td>

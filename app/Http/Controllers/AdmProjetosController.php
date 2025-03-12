@@ -48,6 +48,8 @@ class AdmProjetosController extends Controller
         $request->merge([
             'valor_minimo' => preg_replace('/[^\d.]/', '', str_replace(',', '.', $request->valor_minimo)),
             'valor_maximo' => preg_replace('/[^\d.]/', '', str_replace(',', '.', $request->valor_maximo)),
+            'notificar' => filter_var($request->input('notificar'), FILTER_VALIDATE_BOOLEAN),
+            'visibilidade' => $request->has('visibilidade') ? true : false,
         ]);
 
         if ($request->get('valor_minimo') > $request->get('valor_maximo')){
@@ -62,7 +64,9 @@ class AdmProjetosController extends Controller
             'descricao' => 'required|string',
             'detalhes' => 'nullable|string',
             'status' => 'required|in:AN,PI,CN',
-            'img_projetos.*' => 'nullable|image|mimes:jpeg,jpg,png|max:8128', // Cada imagem deve seguir os requisitos
+            'visibilidade' => 'required|boolean',
+            'notificar' => 'nullable|boolean',
+            'img_projetos.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048'
         ]);
 
         $projeto = Projetos::create([
@@ -73,6 +77,7 @@ class AdmProjetosController extends Controller
             'descricao' => $validatedData['descricao'],
             'detalhes' => $request->input('detalhes'),
             'status' => $validatedData['status'],
+            'visibilidade' => $validatedData['visibilidade'],
         ]);
 
         if ($request->hasFile('img_projetos')) {
@@ -90,9 +95,14 @@ class AdmProjetosController extends Controller
             }
         }
 
-        $contatos = ContatoArmazenado::pluck('email');
-        SendProjetoCriadoEmails::dispatch($projeto, $contatos);
+        if($request->input('notificar')){
+            $contatos = ContatoArmazenado::pluck('email');
+            SendProjetoCriadoEmails::dispatch($projeto, $contatos);
 
+            return redirect()
+            ->route('admin.projetos.editar', $projeto->id)
+            ->with('toast_success', 'Projeto criado com sucesso e as notificações estão sendo enviadas!');
+        }
 
         return redirect()
             ->route('admin.projetos.editar', $projeto->id)
@@ -110,7 +120,6 @@ class AdmProjetosController extends Controller
     // POST DE EDITAR PROJETO
     public function update_projeto(Request $request, $id)
     {
-
         $request->merge([
             'valor_minimo' => preg_replace('/[^\d.]/', '', str_replace(',', '.', $request->valor_minimo)),
             'valor_maximo' => preg_replace('/[^\d.]/', '', str_replace(',', '.', $request->valor_maximo)),
@@ -128,6 +137,7 @@ class AdmProjetosController extends Controller
             'descricao' => 'required|string',
             'detalhes' => 'nullable|string',
             'status' => 'required|in:AN,PI,CN',
+            'visibilidade' => 'required|boolean',
             'img_projetos.*' => 'nullable|image|mimes:jpeg,jpg,png|max:8128', // Validação para as imagens
         ]);
 
@@ -148,6 +158,7 @@ class AdmProjetosController extends Controller
             'descricao' => $validatedData['descricao'],
             'detalhes' => $request->input('detalhes'),
             'status' => $validatedData['status'],
+            'visibilidade' => $validatedData['visibilidade'],
         ]);
 
         // Se a imagem foi enviada, tenta salvar

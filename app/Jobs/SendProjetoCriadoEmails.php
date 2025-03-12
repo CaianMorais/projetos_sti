@@ -11,6 +11,7 @@ use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Log;
 
 class SendProjetoCriadoEmails implements ShouldQueue
 {
@@ -27,8 +28,13 @@ class SendProjetoCriadoEmails implements ShouldQueue
 
     public function handle()
     {
+        Log::info('Iniciando o envio de e-mails para o projeto', ['projeto_id' => $this->projeto->id]);
+
         foreach ($this->emails as $email) {
             Mail::to($email)->send(new ProjetoCriadoMail($this->projeto));
         }
+        
+        Log::info('E-mails enviados com sucesso', ['projeto_id' => $this->projeto->id]);
+
     }
 }

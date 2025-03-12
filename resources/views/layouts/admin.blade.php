@@ -67,6 +67,10 @@
     <script src="{{ asset('js/admin/pages/dashboard.js') }}"></script>
     <script src="{{ asset('vendors/sweetalert2/sweetalert2.all.min.js') }}"></script>
     <script src="{{ asset('js/admin/main.js') }}"></script>
+    <script>
+        const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+        const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+    </script>
 </body>
 
 </html>

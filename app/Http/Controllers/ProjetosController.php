@@ -14,6 +14,7 @@ class ProjetosController extends Controller
     {
         $projetos = Projetos::orderBy('id', 'desc')
         ->with('fotos')
+        ->where('visibilidade', true)
         ->paginate(9);
 
         return view('main.projeto.projetos')
@@ -25,6 +26,10 @@ class ProjetosController extends Controller
         $projeto = Projetos::where('id', $id)
         ->with('fotos')
         ->first();
+        
+        if ($projeto === null || $projeto->visibilidade == false) {
+            return redirect()->route('projetos')->with('toast_error', 'Projeto não encontrado.');
+        }
 
         $projetoId = $projeto->id;
         $hash = hash_hmac('sha256', $projetoId, config('app.key'));
