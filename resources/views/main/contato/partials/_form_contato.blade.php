@@ -48,7 +48,7 @@
                 </div>
                 <div class="col-12">
                     <button class="btn btn-primary w-100 py-3" type="submit">Enviar mensagem</button>
-                    <small>Ao enviar a mensagem você automaticamente estará concordando com o <a href="#">Termo de
+                    <small>Ao enviar a mensagem você automaticamente estará concordando com o <a href="{{ route('termo') }}">Termo de
                             Consentimento</a> da plataforma.</small>
                 </div>
             </div>

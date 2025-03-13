@@ -45,8 +45,7 @@
                 <div class="form-check">
                     <input class="form-check-input" name="autorizacao" type="checkbox" id="flexCheckDefault">
                     <label class="form-check-label" for="flexCheckDefault">
-                        Eu autorizo o SENAI-RO a enviar mensagens automáticas sobre novos projetos. <a href="#">Saiba
-                            mais</a>
+                        Eu autorizo o SENAI-RO a enviar mensagens automáticas sobre novos projetos.
                     </label>
                 </div>
             </div>
@@ -55,7 +54,7 @@
             </div>
             <div class="col-12">
                 <button class="btn btn-primary w-100 py-3" type="submit">Enviar mensagem</button>
-                <small>Ao enviar a mensagem você automaticamente estará concordando com o <a href="#">Termo de
+                <small>Ao enviar a mensagem você automaticamente estará concordando com o <a href="{{ route('termo') }}">Termo de
                         Consentimento</a> da plataforma.</small>
             </div>
         </div>

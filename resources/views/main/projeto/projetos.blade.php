@@ -23,7 +23,7 @@
     <div class="container-fluid py-5 bg-light">
         <div class="container">
             <div class="mx-auto text-center wow fadeIn" data-wow-delay="0.1s" style="max-width: 500px; visibility: visible; animation-delay: 0.1s; animation-name: fadeIn;">
-                <h1 class="mb-4">Veja nossos mais recentes projetos</h1>
+                <h1 class="mb-4">Veja nossos projetos</h1>
             </div>
             {{-- PARTIAL DE MENU DE PROJETOS --}}
             @include('main.projeto.partials._menu_projetos')

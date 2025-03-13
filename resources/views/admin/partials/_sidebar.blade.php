@@ -71,6 +71,13 @@
                     </a>
                 </li>
 
+                <li class="sidebar-item ">
+                    <a href="{{ route('admin.termo') }}" class='sidebar-link'>
+                    <i class="bi bi-card-text"></i>
+                        <span>Termos</span>
+                    </a>
+                </li>
+
                 @endif
 
                 <li class="sidebar-item ">

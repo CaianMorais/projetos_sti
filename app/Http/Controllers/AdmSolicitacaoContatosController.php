@@ -16,6 +16,7 @@ class AdmSolicitacaoContatosController extends Controller
         return view('admin.solicitacoes_contato')
             ->with('solicitacoes', $solicitacoes)
             ->with('contagem', $contagem)
+            ->with('urlBack', 'admin.menu')
             ->with('title', 'Solicitações de contato');
     }
 

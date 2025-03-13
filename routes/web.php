@@ -6,6 +6,7 @@ use App\Http\Controllers\AdmEquipeController;
 use App\Http\Controllers\AdmPerfisController;
 use App\Http\Controllers\AdmProjetosController;
 use App\Http\Controllers\AdmSolicitacaoContatosController;
+use App\Http\Controllers\AdmTermoConsentimentoController;
 use App\Http\Controllers\AdmUsuariosController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\CapdaController;
@@ -14,6 +15,7 @@ use App\Http\Controllers\EquipeController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProjetosController;
 use App\Http\Controllers\SobreController;
+use App\Http\Controllers\TermoConsentimentoController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -44,6 +46,8 @@ Route::get('equipe', [EquipeController::class, 'equipe'])->name('equipe');
 Route::get('equipe/{id}', [EquipeController::class, 'json_equipe'])->name('equipe.ver_equipe');
 
 Route::get('capda', [CapdaController::class, 'capda'])->name('capda');
+
+Route::get('termo', [TermoConsentimentoController::class, 'termo'])->name('termo');
 
 Route::get('login', [LoginController::class, 'showLoginForm'])->name('login');
 Route::post('login', [LoginController::class, 'login']);
@@ -105,5 +109,10 @@ Route::group(['middleware' => ['check.role:3']], function () {
         //DADOS ARMAZENADOS
         Route::get('dados_armazenados', [AdmContatosArmazenadosController::class,'dados'])->name('admin.dados_armazenados');
         Route::get('dados_armazenados/delete/{id}', [AdmContatosArmazenadosController::class,'destroy'])->name('admin.dados_armazenados.delete');
+
+        //TERMOS DE CONSENTIMENTO
+        Route::get('termo', [AdmTermoConsentimentoController::class,'termo'])->name('admin.termo');
+        Route::get('termo/editar', [AdmTermoConsentimentoController::class,'editar_termo'])->name('admin.editar_termo');
+        Route::post('termo/update', [AdmTermoConsentimentoController::class,'update'])->name('admin.atualizar_termo');
     });
 });
