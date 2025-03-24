@@ -10,4 +10,5 @@
 <ul>
     <li>12/03/2025: Visibilidade adicionada aos projetos, agora é possível ter projetos postados mas não visíveis na tela de projetos;<br></li>
     <li>12/03/2025: Agora é necessário confirmar, ao postar um projeto, o envio de uma notificação para o e-mail dos usuários salvos;<br></li>
+    <li>24/03/2025: Mudanças no layout principal;<br></li>
 </ul>
