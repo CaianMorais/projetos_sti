@@ -71,6 +71,16 @@
                 </div>
             </div>
         </div>
+        <div class="col-12">
+            <div class="form-check">
+                <div class="checkbox">
+                    <input type="hidden" name="valor_visibilidade" value="0">
+
+                    <input type="checkbox" id="valor_visibilidade" name="valor_visibilidade" class="form-check-input" value="1" {{ old('valor_visibilidade', $projeto->valor_visibilidade) ? 'checked' : '' }}>
+                    <label for="checkbox3">Mostrar valores de investimento</label>
+                </div>
+            </div>
+        </div>
         <div class="col-12 d-flex justify-content-end">
             <button type="submit" id="publicar" class="btn btn-primary me-1 mb-1">Atualizar</button>
             <button type="reset" class="btn btn-light-secondary me-1 mb-1">Limpar formulário</button>

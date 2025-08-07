@@ -66,8 +66,18 @@
                 <div class="checkbox">
                     <input type="hidden" name="visibilidade" value="0">
 
-                    <input type="checkbox" id="visibilidade" name="visibilidade" class="form-check-input" value="1" checked="">
+                    <input type="checkbox" id="visibilidade" name="visibilidade" class="form-check-input" value="1" checked>
                     <label for="checkbox3">Visível</label>
+                </div>
+            </div>
+        </div>
+        <div class="col-12">
+            <div class="form-check">
+                <div class="checkbox">
+                    <input type="hidden" name="valor_visibilidade" value="0">
+
+                    <input type="checkbox" id="valor_visibilidade" name="valor_visibilidade" class="form-check-input" value="1">
+                    <label for="checkbox4">Mostrar valores de investimento</label>
                 </div>
             </div>
         </div>
