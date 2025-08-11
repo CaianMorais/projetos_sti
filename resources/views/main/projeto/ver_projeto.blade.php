@@ -10,7 +10,7 @@
             <div class="row g-5 pt-5">
                 <div class="col-lg-6 align-self-center text-center text-lg-start mb-lg-5">
                     <div class="btn btn-sm border rounded-pill text-white px-3 mb-3 animated slideInRight">Projeto #{{ $projeto->id }}</div>
-                    <h1 class="display-4 text-white mb-4 animated slideInRight">{{ $projeto->nome_projeto }}</h1>
+                    <h4 class="display-6 text-white mb-4 animated slideInRight">{{ $projeto->nome_projeto }}</h1>
                     <p class="text-white mb-4 animated slideInRight">{{ $projeto->descricao }}</p>
                 </div>
                 <div class="col-lg-6 align-self-end text-center text-lg-end">

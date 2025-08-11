@@ -8,6 +8,7 @@
 <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.3s">
     <h5 class="text-white mb-4">Entre em contato</h5>
     <p><i class="fa fa-map-marker-alt me-3"></i>Rua Rui Barbosa, 1112, Arigolândia</p>
+    <p><i class="fa fa-map-location me-3"></i>Porto Velho - RO</p>
     <p><i class="fa fa-phone-alt me-3"></i>(69) 3216-3400</p>
     <p><i class="fa fa-envelope me-3"></i>sti@fiero.org.br</p>
     {{--
