@@ -128,15 +128,15 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">Sobre a plataforma</h1>
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">{{ __('footer.detalhes.titulo') }}</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <ul>
-                        <li><i class="fa-solid fa-network-wired"></i></i>&nbsp; Criado e hospedado internamente na FIERO</li>
-                        <li><i class="fa-brands fa-php"></i>&nbsp; Desenvolvido em Laravel com PHP 7.4.33</li>
-                        <li><i class="fa-brands fa-html5"></i>&nbsp; Template gratuito <a target="_blank" href="https://themewagon.com/themes/ai-tech-free-bootstrap-5-business-corporate-website-template/">AI.Tech</a> </li>
-                        <li><i class="fa-solid fa-terminal"></i>&nbsp; Dev: Caian Quirino</li>
+                        <li><i class="fa-solid fa-network-wired"></i>&nbsp; {{ __('footer.detalhes.texto1') }}</li>
+                        <li><i class="fa-brands fa-php"></i>&nbsp; {{ __('footer.detalhes.texto2') }}</li>
+                        <li><i class="fa-brands fa-html5"></i>&nbsp; {{ __('footer.detalhes.texto3') }} <a target="_blank" href="https://themewagon.com/themes/ai-tech-free-bootstrap-5-business-corporate-website-template/">AI.Tech</a> </li>
+                        <li><i class="fa-solid fa-terminal"></i>&nbsp; {{ __('footer.detalhes.texto4') }} <a target="_blank" href="https://www.linkedin.com/in/caian-quirino-577102245/">Caian Quirino</a></li>
                     </ul>
                 </div>
             </div>

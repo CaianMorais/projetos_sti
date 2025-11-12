@@ -17,7 +17,7 @@ use App\Http\Controllers\ProjetosController;
 use App\Http\Controllers\SobreController;
 use App\Http\Controllers\TermoConsentimentoController;
 use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,6 +29,14 @@ use Illuminate\Support\Facades\Auth;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+Route::get('lang/{locale}', function ($locale) {
+    if (in_array($locale, ['en', 'pt_BR'])) {
+        Session::put('locale', $locale);
+    }
+    return redirect()->back();
+});
+
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 // Route::get('/home', [HomeController::class, 'index'])->name('home');

@@ -1,14 +1,19 @@
 <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.1s">
     <a href="{{ route('login') }}" class="d-inline-block mb-3">
-        <h2 class="text-white">Inovação SENAI</h2>
+        <h2 class="text-white">
+            {{ __('footer.col1.titulo') }}
+        </h2>
     </a>
-    <p class="mb-0">Site desenvolvido pelo setor de Coordenação de Tecnologia de Informação do Sistema da Federação das
-        Indústrias do Estado de Rondônia juntamente com o setor de Soluções em Tecnologias e Inovação.</p>
+    <p class="mb-0">
+        {{ __('footer.col1.descricao') }}
+    </p>
 </div>
 <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.3s">
-    <h5 class="text-white mb-4">Entre em contato</h5>
+    <h5 class="text-white mb-4">
+        {{ __('footer.col2.titulo') }}
+    </h5>
     <p><i class="fa fa-map-marker-alt me-3"></i>Rua Rui Barbosa, 1112, Arigolândia</p>
-    <p><i class="fa fa-map-location me-3"></i>Porto Velho - RO</p>
+    <p><i class="fa fa-map-location me-3"></i>Porto Velho - RO, Brasil</p>
     <p><i class="fa fa-phone-alt me-3"></i>(69) 3216-3400</p>
     <p><i class="fa fa-envelope me-3"></i>sti@fiero.org.br</p>
     {{--
@@ -22,17 +27,36 @@
     --}}
 </div>
 <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.5s">
-    <h5 class="text-white mb-4">Páginas</h5>
-    <a class="btn btn-link" href="{{ route('projetos') }}">Projetos</a>
-    <a class="btn btn-link" href="{{ route('equipe') }}">Equipe</a>
-    <a class="btn btn-link" href="{{ route('capda') }}">Certificação</a>
-    <a class="btn btn-link" href="{{ route('contato') }}">Contato</a>
+    <h5 class="text-white mb-4">
+        {{ __('footer.col3.titulo') }}
+    </h5>
+    <a class="btn btn-link" href="{{ route('projetos') }}">
+    {{ __('footer.col3.projetos') }}</a>
+    <a class="btn btn-link" href="{{ route('equipe') }}">
+        {{ __('footer.col3.equipe') }}
+    </a>
+    <a class="btn btn-link" href="{{ route('capda') }}">
+        {{ __('footer.col3.certificacao') }}
+    </a>
+    <a class="btn btn-link" href="{{ route('contato') }}">
+        {{ __('footer.col3.contato') }}
+    </a>
 </div>
 
 <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.7s">
-    <h5 class="text-white mb-4">Mais</h5>
-    <a class="btn btn-link" href="{{ route('termo') }}">Termo de Consentimento</a>
-    <a class="btn btn-link" href="{{ route('quem_somos') }}">Quem Somos</a>
-    <a class="btn btn-link" href="https://portal.fiero.org.br/senai" target="_blank">Portal SENAI/RO</a>
-    <a class="btn btn-link" href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#modalDetalhes">Detalhes do site</a>
+    <h5 class="text-white mb-4">
+        {{ __('footer.col4.titulo') }}
+    </h5>
+    <a class="btn btn-link" href="{{ route('termo') }}">
+        {{ __('footer.col4.termoConsentimento') }}
+    </a>
+    <a class="btn btn-link" href="{{ route('quem_somos') }}">
+        {{ __('footer.col4.quemSomos') }}
+    </a>
+    <a class="btn btn-link" href="https://portal.fiero.org.br/senai" target="_blank">
+        {{ __('footer.col4.portalSENAI') }}
+    </a>
+    <a class="btn btn-link" href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#modalDetalhes">
+        {{ __('footer.col4.detalhes') }}
+    </a>
 </div>
