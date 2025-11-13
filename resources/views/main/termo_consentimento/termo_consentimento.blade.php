@@ -1,6 +1,6 @@
 @extends('layout')
 
-@section('title', 'Termo de Consentimento')
+@section('title', __('guias.termo'))
 
 @section('content')
 

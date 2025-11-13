@@ -1,6 +1,7 @@
 @extends('layout')
 
-@section('title', 'Início - Projetos STI')
+@section('title', __('guias.inicio'))
+
 
 @section('content')
 

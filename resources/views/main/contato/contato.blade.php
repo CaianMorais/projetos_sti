@@ -1,6 +1,6 @@
 @extends('layout')
 
-@section('title', 'Entrar em contato')
+@section('title', __('guias.contato'))
 
 @section('content')
     <!-- Hero Start -->
@@ -8,9 +8,15 @@
         <div class="container pt-5">
             <div class="row g-5 pt-5">
                 <div class="col-lg-6 align-self-center text-center text-lg-start mb-lg-5">
-                    <div class="btn btn-sm border rounded-pill text-white px-3 mb-3 animated slideInRight">Contato</div>
-                    <h1 class="display-4 text-white mb-4 animated slideInRight">Entre em contato</h1>
-                    <p class="text-white mb-4 animated slideInRight">Contate nossa equipe para tirar dúvidas gerais, basta preencher o formulário abaixo que o responderemos o mais rápido possível.</p>
+                    <div class="btn btn-sm border rounded-pill text-white px-3 mb-3 animated slideInRight">
+                        {{ __('contato.pill') }}
+                    </div>
+                    <h1 class="display-4 text-white mb-4 animated slideInRight">
+                        {{ __('contato.titulo') }}
+                    </h1>
+                    <p class="text-white mb-4 animated slideInRight">
+                        {{ __('contato.descricao') }}
+                    </p>
                 </div>
                 <div class="col-lg-6 align-self-end text-center text-lg-end">
                     <img class="img-fluid" src="{{ asset('img/contact.png') }}" alt="Banner tela inicial">

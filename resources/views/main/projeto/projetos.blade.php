@@ -1,6 +1,6 @@
 @extends('layout')
 
-@section('title', 'Explorar projetos')
+@section('title', __('guias.projetos'))
 
 @section('content')
     <!-- Hero Start -->

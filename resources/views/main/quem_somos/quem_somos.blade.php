@@ -1,6 +1,6 @@
 @extends('layout')
 
-@section('title', 'Quem somos')
+@section('title', __('guias.quem_somos'))
 
 @section('content')
 
@@ -19,9 +19,15 @@
     <div class="container pt-5">
         <div class="row g-5 pt-5">
             <div class="col-lg-6 align-self-center text-center text-lg-start mb-lg-5">
-                <div class="btn btn-sm border rounded-pill text-white px-3 mb-3 animated slideInRight">Sobre</div>
-                <h1 class="display-4 text-white mb-4 animated slideInRight">Quem somos</h1>
-                <p class="text-white mb-4 animated slideInRight">Confira abaixo, um pouco sobre nossa instituição, do que somos capazes, o que oferecemos e nossos destaques.</p>
+                <div class="btn btn-sm border rounded-pill text-white px-3 mb-3 animated slideInRight">
+                    {{ __('quem_somos.pill') }}
+                </div>
+                <h1 class="display-4 text-white mb-4 animated slideInRight">
+                    {{ __('quem_somos.titulo') }}
+                </h1>
+                <p class="text-white mb-4 animated slideInRight">
+                    {{ __('quem_somos.descricao') }}
+                </p>
             </div>
             <div class="col-lg-6 align-self-end text-center text-lg-end">
                 <img class="img-fluid" src="{{ asset('img/building.png') }}" alt="Banner tela inicial">
@@ -40,7 +46,9 @@
     <div class="container">
         <div class="row g-5">
             <div class="col-12">
-                <h1 class="text-white animated slideInRight text-center">Parceiros</h1>
+                <h1 class="text-white animated slideInRight text-center">
+                    {{ __('quem_somos.parceiros') }}
+                </h1>
             </div>
         </div>
     </div>
