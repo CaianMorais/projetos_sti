@@ -9,7 +9,9 @@
         <div class="container pt-5">
             <div class="row g-5 pt-5">
                 <div class="col-lg-6 align-self-center text-center text-lg-start mb-lg-5">
-                    <div class="btn btn-sm border rounded-pill text-white px-3 mb-3 animated slideInRight">Projeto #{{ $projeto->id }}</div>
+                    <div class="btn btn-sm border rounded-pill text-white px-3 mb-3 animated slideInRight">
+                        {{ __('projetos.main.projeto.pill') }} {{ $projeto->id }}
+                    </div>
                     <h4 class="display-6 text-white mb-4 animated slideInRight">{{ $projeto->nome_projeto }}</h1>
                     <p class="text-white mb-4 animated slideInRight">{{ $projeto->descricao }}</p>
                 </div>
@@ -50,6 +52,13 @@
         @include('main.projeto.partials._projeto_contato')
     </div>
 
-    <script src="https://js.hcaptcha.com/1/api.js" async defer></script>
+    @php
+        use Illuminate\Support\Facades\App;
+
+        $locale = App::getLocale();
+        $lang = $locale === 'en' ? 'en' : 'pt';
+    @endphp
+
+    <script src="https://js.hcaptcha.com/1/api.js?hl={{ $lang }}" async defer></script>
 
 @endsection

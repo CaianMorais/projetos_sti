@@ -7,6 +7,7 @@ return [
         'telefone' => 'Phone',
         'assunto' => 'Subject',
         'mensagem' => 'Message',
+        'autorizacao' => 'I authorize SENAI-RO to send automated messages about new projects.',
     ],
     'placeholders' => [
         'nome' => 'Enter your name',

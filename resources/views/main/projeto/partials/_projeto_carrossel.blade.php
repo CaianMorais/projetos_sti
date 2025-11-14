@@ -2,7 +2,7 @@
     <h2 class="d-flex justify-content-between align-items-center">
         <a type="button" data-bs-target="#carouselExample" data-bs-slide="prev"><i
                 class="fa-solid fa-chevron-left"></i></a>
-        Imagens do projeto
+        {{ __('projetos.main.projeto.imagens') }}
         <a type="button" data-bs-target="#carouselExample" data-bs-slide="next"><i
                 class="fa-solid fa-chevron-right"></i></a>
     </h2>

@@ -35,5 +35,12 @@
         </div>
     </div>
 
-    <script src="https://js.hcaptcha.com/1/api.js" async defer></script>
+    @php
+        use Illuminate\Support\Facades\App;
+
+        $locale = App::getLocale();
+        $lang = $locale === 'en' ? 'en' : 'pt';
+    @endphp
+
+    <script src="https://js.hcaptcha.com/1/api.js?hl={{ $lang }}" async defer></script>
 @endsection

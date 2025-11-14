@@ -9,7 +9,9 @@
         <div class="modal-body">
             <div id="modal-content">
                 <!-- Conteúdo será carregado aqui -->
-                <p>Carregando...</p>
+                <p>
+                    {{ __('equipe.modal.carregando') }}
+                </p>
             </div>
         </div>
         <div class="modal-footer">

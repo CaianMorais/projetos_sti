@@ -1,10 +1,13 @@
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     const modal = document.getElementById("modalMembro");
 
-    modal.addEventListener("show.bs.modal", function(event) {
+    modal.addEventListener("show.bs.modal", function (event) {
         const button = event.relatedTarget;
         const id = button.getAttribute("data-id");
         const url = `/equipe/${id}`;
+        const lang = button.getAttribute("data-lang") || 'pt';
+
+        console.log(lang);
 
         fetch(url)
             .then(response => response.json())
@@ -15,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     </div>
                     <div class="d-flex justify-content-between">
                         <h5 class="mb-0">${data.nome}</h5>
-                        <h5 class="mb-0"><i class="fa-solid fa-phone"></i> ${data.telefone}</h5>
+                        <h5 class="mb-0"><i class="fa-solid fa-phone"></i> ${data.telefone ?? "-"}</h5>
                     </div>
                     <div class="d-flex justify-content-start">
                         <small class="mb-2">${data.bio}</small>
@@ -26,13 +29,22 @@ document.addEventListener("DOMContentLoaded", function() {
                         ${data.lattes ? `<a class="btn btn-square btn-primary m-1" href="${data.lattes}" target="_blank" title="Lattes"><i class="fa-regular fa-id-badge"></i></a>` : ""}
                     </div>
                 `;
-                document.getElementById("tituloModalMembro").innerText = "Mais sobre " + data.nome;
+                if (lang === 'en') {
+                    document.getElementById("tituloModalMembro").innerText = "More about " + data.nome;
+                } else if (lang === 'pt') {
+                    document.getElementById("tituloModalMembro").innerText = "Mais sobre " + data.nome;
+                };
             })
             .catch(error => {
-            console.error("Erro ao carregar informações do membro:", error);
-            document.getElementById("modal-content").innerHTML = `
-                <p class="text-danger">Erro ao carregar as informações. Tente novamente mais tarde.</p>
-            `;
-        });
+                console.error("Err:", error);
+                if (lang === 'en') {
+                    document.getElementById("modal-content").innerHTML = `
+                    <p class="text-danger">Error loading information. Please try again later.</p>
+                `;
+                } else if (lang === 'pt') {
+                    document.getElementById("modal-content").innerHTML = `
+                <p class="text-danger">Erro ao carregar as informações. Tente novamente mais tarde.</p>`
+                };
+            });
     });
 });

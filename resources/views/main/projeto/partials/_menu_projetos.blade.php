@@ -10,11 +10,17 @@
                     <a class="case-overlay text-decoration-none"
                         href="{{ route('projetos.ver_projeto', ['id' => $projeto->id]) }}">
                         @if($projeto->status == 'AN')
-                            <small class="bg-primary">Em andamento</small>
+                            <small class="bg-primary">
+                                {{ __('projetos.main.status.AN') }}
+                            </small>
                         @elseif($projeto->status == 'PI')
-                            <small class="bg-info">Pronto para investimento</small>
+                            <small class="bg-info">
+                                {{ __('projetos.main.status.PI') }}
+                            </small>
                         @elseif($projeto->status == 'CN')
-                            <small class="bg-success">Concluído</small>
+                            <small class="bg-success">
+                                {{ __('projetos.main.status.CN') }}
+                            </small>
                         @endif
                         <h5 class="lh-base text-white mb-3">{{ $projeto->nome_projeto }}
                         </h5>
@@ -25,7 +31,7 @@
         @endforeach
     @else
         <div class="col-lg-12 text-center mt-5">
-            <h6>Ainda não temos projetos disponíveis.</h6>
+            <h6>{{ __('projetos.main.semProjetos') }}</h6>
         </div>
     @endif
 </div>

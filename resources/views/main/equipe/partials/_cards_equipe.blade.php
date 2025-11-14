@@ -1,3 +1,10 @@
+@php
+    use Illuminate\Support\Facades\App;
+
+    $locale = App::getLocale();
+    $lang = $locale === 'en' ? 'en' : 'pt';
+@endphp
+
 <div class="row">
     @foreach($equipe as $membro)
         <div class="col-md-4 col-lg-3 col-sm-12">
@@ -17,7 +24,7 @@
                             <a class="btn btn-square btn-primary m-1" href="{{ $membro->lattes }}" target="_blank" title="Lattes"><i
                                     class="fa-regular fa-id-badge"></i></a>
                         @endif
-                        <a class="btn btn-square btn-primary m-1" title="Detalhes" data-id="{{ $membro->id }}" data-bs-toggle="modal" data-bs-target="#modalMembro"
+                        <a class="btn btn-square btn-primary m-1" title="{{ __('equipe.card.detalhes') }}" data-id="{{ $membro->id }}" data-lang="{{ $lang }}" data-bs-toggle="modal" data-bs-target="#modalMembro"
                             href="javascript:void(0);"><i class="fa-solid fa-info"></i>
                         </a>
                     </div>
