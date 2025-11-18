@@ -8,9 +8,6 @@
             <div class="card-body">
                 {{-- PARTIAL DE FORMULARIO DE EDITAR PROJETO --}}
                 @include('admin.partials.projetos._edit_projeto')
-
-                {{-- PARTIAL DE TABELA DE FOTOS DO PROJETO --}}
-                @include('admin.partials.projetos._fotos_projeto')
             </div>
         </div>
     </div>

@@ -81,6 +81,11 @@ Route::group(['middleware' => ['check.role:2,3']], function() {
         Route::put('projetos/editar/{id}', [AdmProjetosController::class, 'update_projeto'])->name('admin.projeto.update');
         Route::delete('delete/fotos/{foto}', [AdmProjetosController::class, 'destroy_foto'])->name('admin.projetos.fotos.destroy');
         Route::get('projetos/delete/{projeto}', [AdmProjetosController::class,'destroy_projeto'])->name('admin.projetos.delete');
+        Route::get('projetos/duplicar/{projeto}', [AdmProjetosController::class, 'form_duplicate_projeto'])->name('admin.projetos.form_duplicar');
+        Route::post('projetos/duplicar/{id}', [AdmProjetosController::class, 'duplicate_projeto'])->name('admin.projetos.duplicar');
+        Route::get('projetos/fotos/{projeto}', [AdmProjetosController::class,'editar_fotos_projeto'])->name('admin.projetos.fotos');
+        Route::post('projetos/fotos/{id}', [AdmProjetosController::class,'update_fotos_projeto'])->name('admin.projetos.fotos.update');
+        Route::get('projetos/capa/{foto}/{projeto}/{projeto_translated_id}', [AdmProjetosController::class,'definir_capa_projeto'])->name('admin.projetos.definir_capa');
 
         // EQUIPE
         Route::get('equipe', [AdmEquipeController::class,'equipe'])->name('admin.equipe');

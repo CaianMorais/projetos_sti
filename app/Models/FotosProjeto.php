@@ -11,7 +11,7 @@ class FotosProjeto extends Model
 
     protected $table = 'fotos_projeto';
 
-    protected $fillable = ['path', 'projeto_id'];
+    protected $fillable = ['path', 'projeto_id', 'capa'];
 
     public function projeto()
     {

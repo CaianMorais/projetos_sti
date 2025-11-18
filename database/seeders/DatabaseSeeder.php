@@ -13,6 +13,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
+        $this->call(PerfisSeeder::class);
+        $this->call(SuperAdminDefaultUser::class);
+        $this->call(ProjetosTranslateSeeder::class);
     }
 }

@@ -20,4 +20,15 @@ class Projetos extends Model
     {
         return $this->hasMany(ContatoProjeto::class,'projeto_id');
     }
+
+    public function traducoes()
+    {
+        return $this->hasMany(ProjetosTranslate::class, 'projeto_id');
+    }
+
+    public function traducaoAtual()
+    {
+        return $this->hasOne(ProjetosTranslate::class, 'projeto_id')
+                    ->where('locale', app()->getLocale());
+    }
 }
