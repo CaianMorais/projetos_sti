@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\ContatoArmazenado;
 use App\Models\ContatoProjeto;
 use App\Models\Projetos;
+use App\Models\ProjetosTranslate;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 
@@ -13,6 +14,7 @@ class ProjetosController extends Controller
     public function projetos()
     {
         $projetos = Projetos::orderBy('id', 'desc')
+        ->with('traducaoAtual')
         ->with('fotos')
         ->where('visibilidade', true)
         ->paginate(9);
@@ -23,16 +25,32 @@ class ProjetosController extends Controller
 
     public function ver_projeto($id)
     {
-        $projeto = Projetos::where('id', $id)
-        ->with('fotos')
-        ->first();
-        
-        if ($projeto === null || $projeto->visibilidade == false) {
-            return redirect()->route('projetos')->with('toast_error', 'Projeto não encontrado.');
+        $projeto_translate = ProjetosTranslate::where('id', $id)->first();
+        $projeto = Projetos::with('fotos')->find($id);
+
+        if ($projeto_translate){
+            
+            $projeto = Projetos::with('fotos')->find($projeto_translate->projeto_id);
+        }
+        elseif (!$projeto_translate && $projeto) {
+            $projeto = Projetos::with('fotos')->find($id);
+        }
+        elseif (!$projeto_translate && !$projeto) {
+            return redirect()->route('projetos')->with('toast_error', __('toasts.projeto.nao_encontrado'));
         }
 
-        $projetoId = $projeto->id;
-        $hash = hash_hmac('sha256', $projetoId, config('app.key'));
+        if (!$projeto || !$projeto->visibilidade) {
+            return redirect()->route('projetos')->with('toast_error', __('toasts.projeto.nao_encontrado'));
+        }
+
+        $projeto_idioma = $projeto->traducaoAtual()->first();
+        
+        if (!$projeto_idioma) {
+            return redirect()->route('projetos')->with('toast_error', __('toasts.projeto.nao_disponivel'));
+        }
+
+        $projeto->setRelation('traducaoAtual', $projeto_idioma);
+        $hash = hash_hmac('sha256', $projeto->id, config('app.key'));
 
         return view('main.projeto.ver_projeto')
         ->with('projeto', $projeto)
@@ -42,7 +60,7 @@ class ProjetosController extends Controller
     public function contato_projeto(Request $request)
     {
         if ($request->input('h-captcha-response') === null) {
-            return redirect()->back()->withInput()->with(['toast_error' => 'Por favor, complete o captcha.']);
+            return redirect()->back()->withInput()->with(['toast_error' => __('toasts.projeto.captcha_vazio')]);
         }
 
         $validatedData = $request->validate([
@@ -54,14 +72,17 @@ class ProjetosController extends Controller
             'h-captcha-response' => 'required',
         ]);
 
-        $response = Http::asForm()->post('https://hcaptcha.com/siteverify', [
-            'secret' => env('H_CAPTCHA_SECRETKEY'),
-            'response' => $request->input('h-captcha-response'),
-        ]);
+        //PARA TESTAR NO LOCALHOST
+        //COMENTE DAQUI
+        // $response = Http::asForm()->post('https://hcaptcha.com/siteverify', [
+        //     'secret' => env('H_CAPTCHA_SECRETKEY'),
+        //     'response' => $request->input('h-captcha-response'),
+        // ]);
 
-        if (!$response->json('success')) {
-            return redirect()->back()->withInput()->with(['toast_error' => 'A validação do captcha falhou.']);
-        }
+        // if (!$response->json('success')) {
+        //     return redirect()->back()->withInput()->with(['toast_error' => __('toasts.projeto.captcha_invalido')]);
+        // }
+        //ATÉ AQUI
 
         $projetoId = $request->input('projeto_id');
         $hash = $request->input('hash');
@@ -69,7 +90,7 @@ class ProjetosController extends Controller
         $calculatedHash = hash_hmac('sha256', $projetoId, config('app.key'));
 
         if ($hash !== $calculatedHash) {
-            return redirect()->back()->with(['toast_error' => 'Dados inválidos ou adulterados.']);
+            return redirect()->back()->with(['toast_error' => __('toasts.projeto.dados_invalidados')]);
         }
 
         $projeto = Projetos::where('id', '=', $projetoId)
@@ -90,9 +111,10 @@ class ProjetosController extends Controller
             'telefone' => $validatedData['telefone'],
             'mensagem' => $validatedData['mensagem'],
             'projeto_id' => $validatedData['projeto_id'],
+            'locale' => app()->getLocale(),
             'lido' => false,
         ]);
 
-        return redirect()->back()->with('toast_success', 'Mensagem enviada com sucesso!');
+        return redirect()->back()->with('toast_success', __('toasts.projeto.mensagem_enviada'));
     }
 }

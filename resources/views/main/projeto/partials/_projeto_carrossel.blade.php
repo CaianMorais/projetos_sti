@@ -8,8 +8,8 @@
     </h2>
     <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
-            @if($projeto->fotos->slice(0, -1)->isNotEmpty())
-                @foreach($projeto->fotos->slice(0, -1)->values() as $index => $foto)
+            @if($projeto->fotos->where('capa', false)->isNotEmpty())
+                @foreach($projeto->fotos->where('capa', false)->values() as $index => $foto)
                     <div class="carousel-item {{ $index === 0 ? 'active' : '' }}">
                         <img style="min-height: 500px; max-height: 500px;" src="{{ asset('storage/' . $foto->path) }}"
                             class="d-block w-100" alt="Imagem do projeto">

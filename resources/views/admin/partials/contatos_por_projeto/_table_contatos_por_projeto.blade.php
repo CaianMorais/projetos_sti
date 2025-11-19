@@ -7,6 +7,7 @@
                 <table class="table table-striped mb-0">
                     <thead>
                         <tr>
+                            <th>IDIOMA</th>
                             <th>NOME</th>
                             <th>EMAIL</th>
                             <th>DATA</th>
@@ -17,6 +18,13 @@
                     <tbody>
                         @foreach($projeto->contatos as $contato)
                             <tr>
+                                <td>
+                                    @if($contato->locale == 'pt_BR')
+                                    <img width="20" height="20" src="{{ asset('img/br.svg') }}" title="Português">
+                                    @elseif($contato->locale == 'en')
+                                    <img width="20" height="20" src="{{ asset('img/us.svg') }}" title="Inglês">
+                                    @endif
+                                </td>
                                 <td>{{ $contato->nome }}</td>
                                 <td>{{ $contato->email }}</td>
                                 <td>{{ $contato->created_at->format('d/m/Y H:i') }}</td>

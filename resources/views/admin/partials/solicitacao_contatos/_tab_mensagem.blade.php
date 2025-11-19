@@ -6,6 +6,16 @@
     <h5>Projeto vinculado:</h5>
     <p>{{ $mensagem->projeto->nome_projeto }}</p>
     @endif
+    <h5>Versão do projeto:</h5>
+    <p>
+        @if($mensagem->locale == 'pt_BR')
+        <img width="20" height="20" src="{{ asset('img/br.svg') }}"> Português
+        @elseif($mensagem->locale == 'en')
+        <img width="20" height="20" src="{{ asset('img/us.svg') }}"> Inglês
+        @else
+        -
+        @endif
+    </p>
 
     <h5>Mensagem enviada pelo contato: </h5>
     <p>{{ $mensagem->mensagem }}</p>

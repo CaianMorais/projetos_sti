@@ -5,6 +5,6 @@
         </h2>
     </div>
     <div class="row p-4">
-        {!! $projeto->detalhes !!}
+        {!! $projeto->traducaoAtual->detalhes !!}
     </div>
 </div>

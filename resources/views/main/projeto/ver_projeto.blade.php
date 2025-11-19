@@ -1,6 +1,6 @@
 @extends('layout')
 
-@section('title', $projeto->nome_projeto)
+@section('title', $projeto->traducaoAtual->nome_projeto)
 
 @section('content')
 
@@ -12,8 +12,8 @@
                     <div class="btn btn-sm border rounded-pill text-white px-3 mb-3 animated slideInRight">
                         {{ __('projetos.main.projeto.pill') }} {{ $projeto->id }}
                     </div>
-                    <h4 class="display-6 text-white mb-4 animated slideInRight">{{ $projeto->nome_projeto }}</h1>
-                    <p class="text-white mb-4 animated slideInRight">{{ $projeto->descricao }}</p>
+                    <h4 class="display-6 text-white mb-4 animated slideInRight">{{ $projeto->traducaoAtual->nome_projeto }}</h1>
+                    <p class="text-white mb-4 animated slideInRight">{{ $projeto->traducaoAtual->descricao }}</p>
                 </div>
                 <div class="col-lg-6 align-self-end text-center text-lg-end">
                     <img class="img-fluid" src="{{ asset('img/projects.png') }}" alt="Banner tela inicial">

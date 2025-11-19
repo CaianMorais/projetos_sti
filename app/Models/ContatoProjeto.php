@@ -15,6 +15,7 @@ class ContatoProjeto extends Model
         'email',
         'telefone',
         'projeto_id',
+        'locale',
         'mensagem',
         'lido',
     ];

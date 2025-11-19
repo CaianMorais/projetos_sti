@@ -16,6 +16,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProjetosController;
 use App\Http\Controllers\SobreController;
 use App\Http\Controllers\TermoConsentimentoController;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Session;
 
@@ -30,9 +31,15 @@ use Illuminate\Support\Facades\Session;
 |
 */
 
-Route::get('lang/{locale}', function ($locale) {
+Route::get('lang/{locale}', function ($locale, Request $request) {
     if (in_array($locale, ['en', 'pt_BR'])) {
         Session::put('locale', $locale);
+        app()->setLocale($locale);
+    }
+    $next = $request->query('next');
+
+    if ($next && str_starts_with($next, '/')) {
+        return redirect($next);
     }
     return redirect()->back();
 });

@@ -6,6 +6,7 @@
                     <th>NOME</th>
                     <th>E-MAIL</th>
                     <th>PROJETO</th>
+                    <th>VERSÃO (idioma)</th>
                     <th>ENVIADO EM</th>
                     <th>VER</th>
                 </tr>
@@ -20,6 +21,15 @@
                         <td>{{ $contato->nome }}</td>
                         <td>{{ $contato->email }}</td>
                         <td>{{ $contato->projeto->nome_projeto }}</td>
+                        <td>
+                            @if ($contato->locale == 'pt_BR' )
+                            <img width="20" height="20" src="{{ asset('img/br.svg') }}" title="Português"> Português
+                            @elseif ($contato->locale == 'en')
+                            <img width="20" height="20" src="{{ asset('img/us.svg') }}" title="Inglês"> Inglês
+                            @else
+                            -
+                            @endif
+                        </td>
                         <td>{{ date_format($contato->created_at, 'd/m/Y H:i') }}</td>
                         <td><a href="{{ route('admin.ver_contato_projeto', $contato->id) }}"><i
                                     class="bi bi-chevron-double-right"></i></a></td>

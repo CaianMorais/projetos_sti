@@ -27,5 +27,7 @@ class AppServiceProvider extends ServiceProvider
         if (config('app.env') === 'production') {
             URL::forceScheme('https');
         }
+        $locale = session('locale', 'pt_BR');
+        app()->setLocale($locale);
     }
 }

@@ -5,9 +5,13 @@
 <div class="col-12">
     <div class="card">
         <div class="card-header text-center">
+            @if($contatos)
             <img width="64" height="22" src="{{ asset('img/admin/lido.png') }}"> Lido
             &nbsp;
             <img width="64" height="22" src="{{ asset('img/admin/nao-lido.png') }}"> Não lido
+            @else
+            <h5>Não há mensagens enviadas através dos projetos ainda.</h5>
+            @endif
         </div>
         <div class="card-content">
             {{-- TABELA QUE MOSTRA TODOS OS CONTATOS ENVIADOS ATRAVES DE PROJETOS --}}
