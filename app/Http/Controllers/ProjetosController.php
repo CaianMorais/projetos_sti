@@ -74,14 +74,14 @@ class ProjetosController extends Controller
 
         //PARA TESTAR NO LOCALHOST
         //COMENTE DAQUI
-        // $response = Http::asForm()->post('https://hcaptcha.com/siteverify', [
-        //     'secret' => env('H_CAPTCHA_SECRETKEY'),
-        //     'response' => $request->input('h-captcha-response'),
-        // ]);
+        $response = Http::asForm()->post('https://hcaptcha.com/siteverify', [
+            'secret' => env('H_CAPTCHA_SECRETKEY'),
+            'response' => $request->input('h-captcha-response'),
+        ]);
 
-        // if (!$response->json('success')) {
-        //     return redirect()->back()->withInput()->with(['toast_error' => __('toasts.projeto.captcha_invalido')]);
-        // }
+        if (!$response->json('success')) {
+            return redirect()->back()->withInput()->with(['toast_error' => __('toasts.projeto.captcha_invalido')]);
+        }
         //ATÉ AQUI
 
         $projetoId = $request->input('projeto_id');

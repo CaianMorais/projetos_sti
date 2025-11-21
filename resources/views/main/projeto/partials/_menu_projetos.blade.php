@@ -6,7 +6,7 @@
                 style="visibility: visible; animation-delay: 0.3s; animation-name: fadeIn;">
                 <div class="case-item position-relative overflow-hidden rounded mb-2">
                     <img class="img-fluid" style="min-width:400px; min-height:500px;"
-                        src="{{ $projeto->fotos->isNotEmpty() ? asset('storage/' . $projeto->fotos->where('capa',true)->first()->path) : asset('img/default_project.jpg') }}"
+                        src="{{ $projeto->fotos->where('capa',true)->isNotEmpty() ? asset('storage/' . $projeto->fotos->where('capa',true)->first()->path) : asset('img/default_project.jpg') }}"
                         alt="Imagem do projeto">
                     <a class="case-overlay text-decoration-none"
                         href="{{ route('projetos.ver_projeto', ['id' => $projeto->traducaoAtual->id]) }}">

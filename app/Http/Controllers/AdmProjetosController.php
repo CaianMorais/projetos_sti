@@ -260,7 +260,8 @@ class AdmProjetosController extends Controller
 
             Log::info('Dados validados', ['data' => $validatedData]);
 
-            $projeto = Projetos::findOrFail($id);
+            $projeto_editado = ProjetosTranslate::findOrFail($id);
+            $projeto = Projetos::findOrFail($projeto_editado->projeto_id);
 
             if (!$projeto) {
                 Log::error('Projeto não encontrado', ['projeto_id' => $id]);
@@ -278,7 +279,7 @@ class AdmProjetosController extends Controller
                         ]);
                     } catch (\Exception $e) {
                         Log::error('Erro ao salvar imagem', ['error' => $e->getMessage()]);
-                        return redirect()->route('admin.projetos.editar', $projeto->id)
+                        return redirect()->route('admin.projetos.editar', $projeto_editado->id)
                             ->with('error', 'Erro ao fazer upload da imagem!');
                     }
                 }
@@ -286,7 +287,7 @@ class AdmProjetosController extends Controller
 
             // Redirecionamento após sucesso
             Log::info('Redirecionando após atualização', ['projeto_id' => $projeto->id]);
-            return redirect()->route('admin.projetos.fotos', $projeto->id)
+            return redirect()->route('admin.projetos.fotos', $projeto_editado->id)
                 ->with('toast_success', 'Imagens do projeto atualizado com sucesso!');
 
         }

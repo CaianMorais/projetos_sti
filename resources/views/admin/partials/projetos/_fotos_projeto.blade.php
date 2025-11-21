@@ -1,4 +1,4 @@
-<form action="{{ route('admin.projetos.fotos.update', $projeto->id) }}" class="form" method="post" enctype="multipart/form-data">
+<form action="{{ route('admin.projetos.fotos.update', $projeto_translate->id) }}" class="form" method="post" enctype="multipart/form-data">
     @csrf
     <div class="col-12 mb-3">
         <label for="formFileMultiple" class="form-label">Fotos do projeto</label>
