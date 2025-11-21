@@ -6,7 +6,7 @@
             <th>ID P.O. <a type="button" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Identificador do projeto original"><i class="bi bi-info-circle"></i></a></th>
             <th>PROJETO</th>
             <th>STATUS</th>
-            <th>VALORES (min - máx)</th>
+            <th>VALOR</th>
             <th>CRIADO EM</th>
             <th>AÇÕES</th>
         </tr>
@@ -46,7 +46,13 @@
             <td>Concluído</td>
             @endif
 
-            <td>R${{ number_format($projeto->valor_minimo,2, ',','.') }} - R${{ number_format($projeto->valor_maximo,2, ',','.') }}</td>
+            <td>
+                @if($projeto->valor_visibilidade == true)
+                    <i class="bi bi-check2-circle text-success" title="Visível"></i>
+                @else
+                    <i class="bi bi-x-circle text-danger" title="Não visível"></i>
+                @endif
+            </td>
             
             <td>{{ date_format($projeto->created_at, 'd/m/Y H:i') }}</td>
 
