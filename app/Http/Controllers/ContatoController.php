@@ -27,14 +27,17 @@ class ContatoController extends Controller
             'h-captcha-response' => 'required',
         ]);
 
+        // PARA TESTAR O CAPTCHA
+        // COMENTE DAQUI
         $response = Http::asForm()->post('https://hcaptcha.com/siteverify', [
             'secret' => env('H_CAPTCHA_SECRETKEY'),
             'response' => $request->input('h-captcha-response'),
         ]);
 
         if (!$response->json('success')) {
-            return redirect()->back()->withInput()->with(['toast_error' => 'A validação do captcha falhou.']);
+            return redirect()->back()->withInput()->with(['toast_error' => __('toasts.contato.falha_captcha')]);
         }
+        // ATÉ AQUI
 
         SolicitacaoContato::create([
             'nome' => $validatedData['nome'],
@@ -47,6 +50,6 @@ class ContatoController extends Controller
 
         return redirect()
         ->back()
-        ->with('toast_success', 'Sua mensagem foi enviada com sucesso!');
+        ->with('toast_success', __('toasts.contato.mensagem_enviada'));
     }
 }

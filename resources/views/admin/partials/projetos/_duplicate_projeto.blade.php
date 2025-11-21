@@ -85,8 +85,7 @@
             <small class="text-danger">As imagens do projeto serão espelhadas.</small><br>
         </div>
         <div class="col-12 d-flex justify-content-end">
-            <button type="submit" id="publicar" class="btn btn-primary me-1 mb-1">Atualizar</button>
-            <button type="reset" class="btn btn-light-secondary me-1 mb-1">Limpar formulário</button>
+            <button type="submit" id="publicar" class="btn btn-primary me-1 mb-1">Duplicar</button>
         </div>
     </div>
 </form>

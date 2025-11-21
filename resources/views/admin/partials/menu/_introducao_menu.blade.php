@@ -10,6 +10,7 @@
     Esse manual é um pouco <strong>abundante e verboso</strong> mas trará informações e instruções precisas sobre:<br>
 <ul>
     <li>Como criar um projeto seguindo as regras de formulário.</li>
+    <li>Como duplicar um projeto para deixa-lo em inglês.</li>
     <li>Como editar um projeto e alterar as fotos dos projetos.</li>
     <li>Como excluir um projeto.</li>
     <li>Como adicionar um membro na equipe seguindo as regras de formulário.</li>

@@ -3,6 +3,7 @@
         <tr class="text-center">
             <th>VISÍVEL</th>
             <th>IDIOMA</th>
+            <th>ID P.O. <a type="button" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Identificador do projeto original"><i class="bi bi-info-circle"></i></a></th>
             <th>PROJETO</th>
             <th>STATUS</th>
             <th>VALORES (min - máx)</th>
@@ -31,14 +32,18 @@
                 @endif
             </td>
 
+            <td>
+                #{{ $projeto->projeto_id }}
+            </td>
+
             <td>{{ \Illuminate\Support\Str::limit($projeto->nome_projeto, 20, '...') }}</td>
 
             @if ($projeto->status == 'PI')
-            <td>{{ $projeto->status }} - Pronto para Investimento</td>
+            <td>Pronto para Investimento</td>
             @elseif ($projeto->status == 'AN')
-            <td>{{ $projeto->status }} - Em andamento</td>
+            <td>Em andamento</td>
             @elseif ($projeto->status == 'CN')
-            <td>{{ $projeto->status }} - Concluído</td>
+            <td>Concluído</td>
             @endif
 
             <td>R${{ number_format($projeto->valor_minimo,2, ',','.') }} - R${{ number_format($projeto->valor_maximo,2, ',','.') }}</td>

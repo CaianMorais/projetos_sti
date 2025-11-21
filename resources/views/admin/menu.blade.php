@@ -14,7 +14,7 @@
                         <a class="nav-link active" id="home-tab" data-bs-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Introdução</a>
                     </li>
                     <li class="nav-item" role="presentation">
-                        <a class="nav-link" id="projetos-tab" data-bs-toggle="tab" href="#projeto" role="tab" aria-controls="profile" aria-selected="false">Projetos</a>
+                        <a class="nav-link" id="projetos-tab" data-bs-toggle="tab" href="#projeto" role="tab" aria-controls="profile" aria-selected="false">Projetos <span class="badge rounded-pill bg-success">Novidades</span></a>
                     </li>
                     <li class="nav-item" role="presentation">
                         <a class="nav-link" id="equipe-tab" data-bs-toggle="tab" href="#equipe" role="tab" aria-controls="equipe" aria-selected="false">Equipe</a>
