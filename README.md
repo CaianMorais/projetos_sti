@@ -1,8 +1,8 @@
 <h3 align="center">Stacks do projeto<h3>
 <ul>
     <li>Back-end: PHP 8.0.4, Laravel 10, jQuery<br></li>
-    <li>Front-end: Bootstrap<br><li>
-    <li>Banco de dados: MySQL 8.0.42<br><li>
+    <li>Front-end: Bootstrap<br></li>
+    <li>Banco de dados: MySQL 8.0.42<br></li>
 </ul>
 <br>
     
