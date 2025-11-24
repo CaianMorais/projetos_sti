@@ -24,7 +24,7 @@ class SetLocale
 
         else {
             $locale = substr($request->server('HTTP_ACCEPT_LANGUAGE'), 0, 2);
-            $locale = in_array($locale, ['en', 'pt']) ? $locale : 'pt';
+            $locale = in_array($locale, ['en', 'pt_BR']) ? $locale : 'pt_BR';
             App::setLocale($locale);
         }
 
