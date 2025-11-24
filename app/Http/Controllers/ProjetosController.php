@@ -45,7 +45,7 @@ class ProjetosController extends Controller
 
         $projeto_idioma = $projeto->traducaoAtual()->first();
         
-        if (!$projeto_idioma) {
+        if (!$projeto_idioma || !$projeto_idioma->visibilidade) {
             return redirect()->route('projetos')->with('toast_error', __('toasts.projeto.nao_disponivel'));
         }
 
