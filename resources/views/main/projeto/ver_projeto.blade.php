@@ -4,6 +4,13 @@
 
 @section('content')
 
+@php
+    use Illuminate\Support\Facades\App;
+
+    $locale = App::getLocale();
+    $lang = $locale === 'en' ? 'en' : 'pt';
+@endphp
+
 <!-- Hero Start -->
     <div class="container-fluid pt-5 bg-primary hero-header">
         <div class="container pt-5">
@@ -29,9 +36,11 @@
     </div>
 
     {{-- CARD DE CARROSSEL COM IMAGENS DO PROJETO --}}
-    <div class="container-fluid py-5 bg-light">
-        @include('main.projeto.partials._projeto_carrossel')
-    </div>
+    @if($locale != 'en')
+        <div class="container-fluid py-5 bg-light">
+            @include('main.projeto.partials._projeto_carrossel')
+        </div>
+    @endif
 
     {{-- CONTAINER COM CARDS DE INFORMAÇÕES E VALORES --}}
     <div class="container-fluid py-5 bg-light">
@@ -51,13 +60,6 @@
     <div class="container-fluid py-5 bg-light">
         @include('main.projeto.partials._projeto_contato')
     </div>
-
-    @php
-        use Illuminate\Support\Facades\App;
-
-        $locale = App::getLocale();
-        $lang = $locale === 'en' ? 'en' : 'pt';
-    @endphp
 
     <script src="https://js.hcaptcha.com/1/api.js?hl={{ $lang }}" async defer></script>
 
